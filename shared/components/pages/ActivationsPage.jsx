@@ -109,7 +109,7 @@ export default class ActivationsPage extends React.Component {
 
                 <div className='ActivationsPage__header'>
                     <AppBar
-                        title         = {l('Quizzes')}
+                        title         = {l('Chicago Wep App')}
                         search        = {search}
                         className     = 'ActivationsPage__app-bar'
                         fixOnScroll   = {false}
@@ -124,10 +124,10 @@ export default class ActivationsPage extends React.Component {
                             activeTab = {selectedCategory ? CATEGORIES.indexOf(selectedCategory) : 0}
                             className = 'ActivationsPage__tabs'
                             onChange  = {(index) => onTabChange(CATEGORIES[index])}>
-                            <Tab>{l('All tests')}</Tab>
-                            <Tab>{l('Vacancies')}</Tab>
-                            <Tab>{l('Education')}</Tab>
-                            <Tab>{l('Entertainment')}</Tab>
+                            <Tab>{l('All Tutorials')}</Tab>
+                            <Tab>{l('Angular')}</Tab>
+                            <Tab>{l('React')}</Tab>
+                            <Tab>{l('React/Redux')}</Tab>
                         </Tabs>
                     </div>
                 </div>
