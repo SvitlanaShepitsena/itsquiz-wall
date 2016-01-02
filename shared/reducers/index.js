@@ -104,6 +104,7 @@ function currentUser(state = {}, action) {
 }
 
 const rootReducer = combineReducers({
+
     activations,
     currentActivation,
     users,

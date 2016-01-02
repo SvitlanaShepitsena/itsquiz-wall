@@ -57,7 +57,7 @@ app.use((req, res) => {
 
     match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
         if (req.url === '/') {
-            res.redirect(302, '/activations');
+            res.redirect(302, '/tutorials');
         }
         if (redirectLocation) {
             res.redirect(301, redirectLocation.pathname + redirectLocation.search);
@@ -142,6 +142,8 @@ function renderHTML({componentHTML, initialState, metaData, config}) {
                 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
                 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
             </script>
+
+            <script src="https://apis.google.com/js/api:client.js"></script>
         </head>
         <body>
         <div id="react-view">${componentHTML}</div>
