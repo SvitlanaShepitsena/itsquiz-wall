@@ -9,7 +9,6 @@ if ( process.env.BROWSER ) {
 
 import IconButton from 'react-mdl/lib/IconButton';
 import Icon       from 'react-mdl/lib/Icon';
-import Textfield  from 'react-mdl/lib/Textfield';
 
 const ENTER_KEY = 13;
 
@@ -52,32 +51,9 @@ export default class SearchBox extends Component {
                     onClick={() => this.refs.input.focus()}>
                     <Icon name='search' className='SearchBox__search-icon'/>
 
-                    <input
-                        className    = 'SearchBox__input'
-                        type         = 'text'
-                        ref          = 'input'
-                        placeholder  = {l('Search')}
-                        defaultValue = {search}
-                        onChange     = {(e) => this.handleSearchChange(e.target.value)}
-                        onKeyDown    = {this.handleKeyDown}
-                        onFocus      = { () => this.setState( { isFocused: true } ) }
-                        onBlur       = { () => this.setState( { isFocused: false } ) }
-                    />
                 </div>
 
-                <Textfield
-                    className      = 'SearchBox__input-expandable'
-                    type           = 'text'
-                    placeholder    = {l('Search')}
-                    label          = {'ololo'}
-                    defaultValue   = {search}
-                    expandable     = {true}
-                    expandableIcon = 'search'
-                    onChange       = {this.handleSearchChange}
-                    onKeyDown      = {this.handleKeyDown}
-                    onFocus        = { () => this.setState( { isFocused: true } ) }
-                    onBlur         = { () => this.setState( { isFocused: false } ) }
-                />
+
             </div>
         );
     }

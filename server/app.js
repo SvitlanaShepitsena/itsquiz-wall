@@ -10,9 +10,9 @@ import { RoutingContext, match } from 'react-router';
 import escapeHTML                from 'lodash/string/escape';
 
 import { fetchComponentsData,
-         getMetaDataFromState,
-         makeRedirectUrl,
-         detectLocale } from './utils';
+    getMetaDataFromState,
+    makeRedirectUrl,
+    detectLocale } from './utils';
 
 import routes         from '../shared/routes.jsx';
 import configureStore from '../shared/store/configureStore';
@@ -27,12 +27,21 @@ import ukLocaleData from '../public/static/lang/uk.json';
 import enLocaleData from '../public/static/lang/en.json';
 
 const i18nToolsRegistry = {
-    ru: new i18n.Tools({ localeData: ruLocaleData, locale: 'ru' }),
-    en: new i18n.Tools({ localeData: enLocaleData, locale: 'en' }),
-    uk: new i18n.Tools({ localeData: ukLocaleData, locale: 'uk' })
+    ru: new i18n.Tools({localeData: ruLocaleData, locale: 'ru'}),
+    en: new i18n.Tools({localeData: enLocaleData, locale: 'en'}),
+    uk: new i18n.Tools({localeData: ukLocaleData, locale: 'uk'})
 };
 
 const app = express();
+app.use((req, res, next) => {
+    if (req.url.indexOf('/api')===0) {
+        res.json({'izya':'oberman',"status":1});
+
+    } else {
+        next();
+    }
+
+});
 
 app.use('/static', express.static('public/static'));
 app.use(cookieParser());
@@ -45,7 +54,7 @@ app.use((req, res) => {
     }
 
     // If user is authenticated redirect him to the wall embedded into the main app
-    if ( req.cookies.authenticated && !req.url.match('embed') ) {
+    if (req.cookies.authenticated && !req.url.match('embed')) {
         const redirectUrl = makeRedirectUrl({originalUrl: req.url});
         return res.redirect(302, redirectUrl);
     }
@@ -55,7 +64,7 @@ app.use((req, res) => {
 
     const i18nTools = i18nToolsRegistry[locale];
 
-    match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
+    match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
         if (req.url === '/') {
             res.redirect(302, '/tutorials');
         }
@@ -72,34 +81,34 @@ app.use((req, res) => {
                 renderProps.params,
                 renderProps.location.query
             )
-            .then(() => {
-                const componentHTML = ReactDOM.renderToString(
-                    <Provider store={store}>
-                        <i18n.Provider i18n={i18nTools}>
-                            <RoutingContext {...renderProps}/>
-                        </i18n.Provider>
-                    </Provider>
-                );
+                .then(() => {
+                    const componentHTML = ReactDOM.renderToString(
+                        <Provider store={store}>
+                            <i18n.Provider i18n={i18nTools}>
+                                <RoutingContext {...renderProps}/>
+                            </i18n.Provider>
+                        </Provider>
+                    );
 
-                const initialState = store.getState();
-                const metaData = getMetaDataFromState({
-                    lang: locale,
-                    route : renderProps.routes[renderProps.routes.length - 1].path,
-                    state : initialState
-                });
+                    const initialState = store.getState();
+                    const metaData = getMetaDataFromState({
+                        lang: locale,
+                        route: renderProps.routes[renderProps.routes.length - 1].path,
+                        state: initialState
+                    });
 
-                return renderHTML({
-                    componentHTML,
-                    initialState,
-                    metaData,
-                    config : clientConfig
-                });
-            })
-            .then(html => {
-                res.cookie('locale', locale, { maxAge: 900000 });
-                res.end(html);
-            })
-            .catch(err => res.end(err.message));
+                    return renderHTML({
+                        componentHTML,
+                        initialState,
+                        metaData,
+                        config: clientConfig
+                    });
+                })
+                .then(html => {
+                    res.cookie('locale', locale, {maxAge: 900000});
+                    res.end(html);
+                })
+                .catch(err => res.end(err.message));
         }
     });
 });
@@ -114,21 +123,21 @@ function renderHTML({componentHTML, initialState, metaData, config}) {
             <link rel="shortcut icon" href="/static/favicon.ico"/>
             <title>Quiz Wall</title>
 
-            <meta name="description" content="${escapeHTML( metaData.description )}">
-            <meta property="og:title" content="${escapeHTML( metaData.title )}" />
-            <meta property="og:site_name" content="${escapeHTML( metaData.siteName )}"/>
-            <meta property="og:image" content="${escapeHTML( metaData.image )}" />
-            <meta property="og:description" content="${escapeHTML( metaData.description )}" />
+            <meta name="description" content="${escapeHTML(metaData.description)}">
+            <meta property="og:title" content="${escapeHTML(metaData.title)}" />
+            <meta property="og:site_name" content="${escapeHTML(metaData.siteName)}"/>
+            <meta property="og:image" content="${escapeHTML(metaData.image)}" />
+            <meta property="og:description" content="${escapeHTML(metaData.description)}" />
             <meta property="og:type" content="test" />
             <meta property="og:locale" content="en_US" />
             <meta property="og:locale:alternate" content="ru_RU" />
             <meta property="og:locale:alternate" content="uk_UA" />
             <meta name="twitter:card" content="summary" />
             <meta name="twitter:site" content="@itsquizcom" />
-            <meta name="twitter:title" content="${escapeHTML( metaData.title )}" />
-            <meta name="twitter:description" content="${escapeHTML( metaData.description )}" />
-            <meta name="twitter:image" content="${escapeHTML( metaData.image )}" />
-            <meta property="fb:app_id" content="${escapeHTML( config.facebookAppId )}" />
+            <meta name="twitter:title" content="${escapeHTML(metaData.title)}" />
+            <meta name="twitter:description" content="${escapeHTML(metaData.description)}" />
+            <meta name="twitter:image" content="${escapeHTML(metaData.image)}" />
+            <meta property="fb:app_id" content="${escapeHTML(config.facebookAppId)}" />
 
             <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">

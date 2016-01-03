@@ -122,11 +122,6 @@ export default class AppBar extends Component {
                     displaySearch
                         ? (
                             <div className='AppBar__center'>
-                                <SearchBox
-                                    className = 'AppBar__search'
-                                    search    = {search}
-                                    onSearch  = {onSearch}
-                                />
                             </div>
                         )
                         : null
