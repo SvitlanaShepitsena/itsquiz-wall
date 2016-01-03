@@ -13,7 +13,7 @@ if ( process.env.BROWSER ) {
     require('./ActivationsPage.less');
 }
 
-const CATEGORIES = ['ALL', 'VACANCY', 'EDUCATION', 'ENTERTAINMENT'];
+const CATEGORIES = ['ALL', 'ANGULAR', 'REACT', 'REDUX'];
 
 export default class ActivationsPage extends React.Component {
     static contextTypes = { i18n: React.PropTypes.object };
@@ -127,13 +127,13 @@ export default class ActivationsPage extends React.Component {
                             <Tab>{l('All Tutorials')}</Tab>
                             <Tab>{l('Angular')}</Tab>
                             <Tab>{l('React')}</Tab>
-                            <Tab>{l('React/Redux')}</Tab>
+                            <Tab>{l('Redux')}</Tab>
                         </Tabs>
                     </div>
                 </div>
 
                 <div className='ActivationsPage__content'>
-                    {this.renderContent()}
+                    Content
                 </div>
             </div>
         );
