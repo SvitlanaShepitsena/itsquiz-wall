@@ -110,12 +110,10 @@ class ActivationsPageContainer extends Component {
     }
 }
 
-function mapStateToProps({ activations: {entitiesByCategory, search, category, isLoading} }) {
+function mapStateToProps({ activations: {activations, isLoading} }) {
     return {
-        activations : entitiesByCategory[category] || [],
-        isLoading,
-        search,
-        category
+        activations,
+        isLoading
     };
 }
 

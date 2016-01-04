@@ -9,21 +9,21 @@ import QuizCard    from '../QuizCard.jsx';
 import AppBar      from '../AppBar.jsx';
 import ShareDialog from '../../containers/ShareDialog.jsx';
 
-if ( process.env.BROWSER ) {
+if (process.env.BROWSER) {
     require('./ActivationsPage.less');
 }
 
-const CATEGORIES = ['ALL', 'VACANCY', 'EDUCATION', 'ENTERTAINMENT'];
+const CATEGORIES = ['ALL', 'ANGULAR', 'REACT', 'REDUX'];
 
 export default class ActivationsPage extends React.Component {
-    static contextTypes = { i18n: React.PropTypes.object };
+    static contextTypes = {i18n: React.PropTypes.object};
 
     static propTypes = {
-        activations : React.PropTypes.arrayOf(React.PropTypes.object),
-        search      : React.PropTypes.string,
-        onItemClick : React.PropTypes.func,
-        onShare     : React.PropTypes.func,
-        onSearch    : React.PropTypes.func
+        activations: React.PropTypes.arrayOf(React.PropTypes.object),
+        search: React.PropTypes.string,
+        onItemClick: React.PropTypes.func,
+        onShare: React.PropTypes.func,
+        onSearch: React.PropTypes.func
     };
 
     renderContent = () => {
@@ -31,7 +31,7 @@ export default class ActivationsPage extends React.Component {
         const { activations, search, isLoading, isEmpty, onItemClick, onShare } = this.props;
 
         if (isLoading) {
-            return <Spinner className='ActivationsPage__spinner' />;
+            return <Spinner className='ActivationsPage__spinner'/>;
         }
 
         if (isEmpty && search) {
@@ -52,26 +52,14 @@ export default class ActivationsPage extends React.Component {
 
         return (
             <Grid className='ActivationsPage__list'>
-                {activations.map( activation =>
+                {activations.map(activation =>
                     <Cell
-                        key    = {activation.id}
-                        align  = 'top'
-                        col    = {3}
-                        tablet = {4}
-                        phone  = {12}>
-                        <QuizCard
-                            name              = {activation.name}
-                            message           = {activation.message}
-                            numberOfQuestions = {activation.numberOfQuestions}
-                            timeToPass        = {activation.timeToPass}
-                            userQuizSession   = {activation.userQuizSession}
-                            pictureURL        = {activation.pictureURL}
-                            author            = {activation.author}
-                            isSponsored       = {activation.isSponsored}
-                            isPassed          = {activation.isPassed}
-                            onShare           = {onShare.bind(this, activation)}
-                            onClick           = {onItemClick.bind(this, activation)}
-                        />
+                        key={activation.youtubeId}
+                        align='top'
+                        col={3}
+                        tablet={4}
+                        phone={12}>
+                        <QuizCard>{activation.title}</QuizCard>
                     </Cell>
                 )}
             </Grid>
@@ -89,45 +77,45 @@ export default class ActivationsPage extends React.Component {
             onSearch,
             onTabChange,
             onStopSharing
-        } = this.props;
+            } = this.props;
 
         const { l } = this.context.i18n;
 
         const classes = cx('ActivationsPage', {
-            'ActivationsPage--embedded' : isEmbedded,
-            'ActivationsPage--loading'  : isLoading
+            'ActivationsPage--embedded': isEmbedded,
+            'ActivationsPage--loading': isLoading
         });
 
         return (
             <div className={classes}>
                 <ShareDialog
-                    title          = {l('Share this test')}
-                    isOpen         = {isSharing}
-                    linkToShare    = {linkToShare}
-                    onRequestClose = {onStopSharing}
+                    title={l('Share this test')}
+                    isOpen={isSharing}
+                    linkToShare={linkToShare}
+                    onRequestClose={onStopSharing}
                 />
 
                 <div className='ActivationsPage__header'>
                     <AppBar
-                        title         = {l('Quizzes')}
-                        search        = {search}
-                        className     = 'ActivationsPage__app-bar'
-                        fixOnScroll   = {false}
-                        scrollOffset  = {65}
-                        displaySearch = {true}
-                        onSearch      = {onSearch}
+                        title={l('Chicago Wep App')}
+                        search={search}
+                        className='ActivationsPage__app-bar'
+                        fixOnScroll={false}
+                        scrollOffset={65}
+                        displaySearch={true}
+                        onSearch={onSearch}
                     />
 
                     <div className='ActivationsPage__tab-bar'>
                         <Tabs
-                            ripple    = {true}
-                            activeTab = {selectedCategory ? CATEGORIES.indexOf(selectedCategory) : 0}
-                            className = 'ActivationsPage__tabs'
-                            onChange  = {(index) => onTabChange(CATEGORIES[index])}>
-                            <Tab>{l('All tests')}</Tab>
-                            <Tab>{l('Vacancies')}</Tab>
-                            <Tab>{l('Education')}</Tab>
-                            <Tab>{l('Entertainment')}</Tab>
+                            ripple={true}
+                            activeTab={selectedCategory ? CATEGORIES.indexOf(selectedCategory) : 0}
+                            className='ActivationsPage__tabs'
+                            onChange={(index) => onTabChange(CATEGORIES[index])}>
+                            <Tab>{l('All Tutorials')}</Tab>
+                            <Tab>{l('Angular')}</Tab>
+                            <Tab>{l('React')}</Tab>
+                            <Tab>{l('Redux')}</Tab>
                         </Tabs>
                     </div>
                 </div>

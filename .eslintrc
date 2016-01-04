@@ -110,7 +110,7 @@
         "eol-last": 2,
         "func-style": [2, "declaration"],
         "indent": [2, 4, {"SwitchCase": 1}],
-        "linebreak-style": [2, "unix"],
+        "linebreak-style": 0,
         "max-nested-callbacks": [2, 4],
         "new-cap": 0,
         "new-parens": 2,
