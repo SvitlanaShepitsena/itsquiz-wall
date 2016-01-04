@@ -21,7 +21,7 @@ import i18n           from '../shared/i18n';
 
 import clientConfig from '../etc/client-config.json';
 
-// Initializa localization
+// Initialize localization
 import ruLocaleData from '../public/static/lang/ru.json';
 import ukLocaleData from '../public/static/lang/uk.json';
 import enLocaleData from '../public/static/lang/en.json';
@@ -34,9 +34,8 @@ const i18nToolsRegistry = {
 
 const app = express();
 app.use((req, res, next) => {
-    if (req.url.indexOf('/api')===0) {
-        res.json({'izya':'oberman',"status":1});
-
+    if (req.url.indexOf('/api') === 0) {
+        res.json({'test': 'appTest', "status": 1});
     } else {
         next();
     }
@@ -63,54 +62,52 @@ app.use((req, res) => {
     const store = configureStore();
 
     const i18nTools = i18nToolsRegistry[locale];
+    // Method of React-router that provides renderProp with property components consisting of all components for the particular view
+    match({routes: routes, location: req.url},
+        (error, redirectLocation, renderProps) => {
+            if (redirectLocation) {
+                res.redirect(301, redirectLocation.pathname + redirectLocation.search);
+            } else if (error) {
+                res.send(500, error.message);
+            } else if (!renderProps) {
+                res.send(404, 'Not found');
+            } else {
+                fetchComponentsData(
+                    store.dispatch,
+                    renderProps.components,
+                    renderProps.params,
+                    renderProps.location.query
+                )
+                    .then(() => {
+                        const componentHTML = ReactDOM.renderToString(
+                            <Provider store={store}>
+                                <i18n.Provider i18n={i18nTools}>
+                                    <RoutingContext {...renderProps}/>
+                                </i18n.Provider>
+                            </Provider>
+                        );
 
-    match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
-        if (req.url === '/') {
-            res.redirect(302, '/tutorials');
-        }
-        if (redirectLocation) {
-            res.redirect(301, redirectLocation.pathname + redirectLocation.search);
-        } else if (error) {
-            res.send(500, error.message);
-        } else if (!renderProps) {
-            res.send(404, 'Not found');
-        } else {
-            fetchComponentsData(
-                store.dispatch,
-                renderProps.components,
-                renderProps.params,
-                renderProps.location.query
-            )
-                .then(() => {
-                    const componentHTML = ReactDOM.renderToString(
-                        <Provider store={store}>
-                            <i18n.Provider i18n={i18nTools}>
-                                <RoutingContext {...renderProps}/>
-                            </i18n.Provider>
-                        </Provider>
-                    );
+                        const initialState = store.getState();
+                        const metaData = getMetaDataFromState({
+                            lang: locale,
+                            route: renderProps.routes[renderProps.routes.length - 1].path,
+                            state: initialState
+                        });
 
-                    const initialState = store.getState();
-                    const metaData = getMetaDataFromState({
-                        lang: locale,
-                        route: renderProps.routes[renderProps.routes.length - 1].path,
-                        state: initialState
-                    });
-
-                    return renderHTML({
-                        componentHTML,
-                        initialState,
-                        metaData,
-                        config: clientConfig
-                    });
-                })
-                .then(html => {
-                    res.cookie('locale', locale, {maxAge: 900000});
-                    res.end(html);
-                })
-                .catch(err => res.end(err.message));
-        }
-    });
+                        return renderHTML({
+                            componentHTML,
+                            initialState,
+                            metaData,
+                            config: clientConfig
+                        });
+                    })
+                    .then(html => {
+                        res.cookie('locale', locale, {maxAge: 900000});
+                        res.end(html);
+                    })
+                    .catch(err => res.end(err.message));
+            }
+        });
 });
 
 function renderHTML({componentHTML, initialState, metaData, config}) {

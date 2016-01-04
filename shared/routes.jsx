@@ -15,17 +15,16 @@ import UsersPageContainer from './containers/pages/UsersPage.jsx';
 import UserPageContainer  from './containers/pages/UserPage.jsx';
 
 export default (
-    <Route component={App} >
+    <Route component={App}>
         <Route component={MainLayout} path='/'>
-            <Redirect from='/' to='/en/tutorials' />
 
-            <Route component={ActivationsPageContainer} path='/tutorials' />
-            <Route component={ActivationPageContainer} path='/tutorials/:id' />
+            <Route component={ActivationsPageContainer} path='/tutorials'/>
+            <Route component={ActivationPageContainer} path='/tutorials/:id'/>
 
-            <Route component={ShareResultPageContainer} path='/result/:id/:userId' />
+            <Route component={ShareResultPageContainer} path='/result/:id/:userId'/>
 
-            <Route component={UsersPageContainer} path='/users' />
-            <Route component={UserPageContainer} path='/users/:id' />
+            <Route component={UsersPageContainer} path='/users'/>
+            <Route component={UserPageContainer} path='/users/:id'/>
         </Route>
     </Route>
 );
