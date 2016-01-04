@@ -21,7 +21,7 @@ import i18n           from '../shared/i18n';
 
 import clientConfig from '../etc/client-config.json';
 
-// Initializa localization
+// Initialize localization
 import ruLocaleData from '../public/static/lang/ru.json';
 import ukLocaleData from '../public/static/lang/uk.json';
 import enLocaleData from '../public/static/lang/en.json';
@@ -36,7 +36,6 @@ const app = express();
 app.use((req, res, next) => {
     if (req.url.indexOf('/api') === 0) {
         res.json({'test': 'appTest', "status": 1});
-
     } else {
         next();
     }
@@ -66,9 +65,6 @@ app.use((req, res) => {
     // Method of React-router that provides renderProp with property components consisting of all components for the particular view
     match({routes: routes, location: req.url},
         (error, redirectLocation, renderProps) => {
-            if (req.url === '/') {
-                res.redirect(302, '/tutorials');
-            }
             if (redirectLocation) {
                 res.redirect(301, redirectLocation.pathname + redirectLocation.search);
             } else if (error) {
