@@ -9,6 +9,13 @@ import { Provider }              from 'react-redux';
 import { RoutingContext, match } from 'react-router';
 import escapeHTML                from 'lodash/string/escape';
 
+/* Authentication*/
+import passport from 'passport';
+import mongoose from 'mongoose';
+import secrets from './config/secrets';
+
+import passportConfig from './config/passport';
+
 import { fetchComponentsData,
     getMetaDataFromState,
     makeRedirectUrl,

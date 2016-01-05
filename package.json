@@ -20,10 +20,12 @@
     "stop": "set NODE_ENV='production'&&pm2 delete itsquiz-wall -s &> /dev/null"
   },
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "bluebird": "^3.0.5",
     "classnames": "^2.1.5",
     "cookie": "^0.2.3",
     "cookie-parser": "^1.4.0",
+    "crypto": "0.0.3",
     "express": "^4.13.3",
     "geoip-lite": "^1.1.6",
     "history": "^1.13.1",
@@ -31,6 +33,9 @@
     "jed": "^1.1.0",
     "lodash": "^3.10.1",
     "moment": "^2.10.6",
+    "mongoose": "^4.3.4",
+    "passport": "^0.3.2",
+    "passport-google-oauth": "^0.2.0",
     "pm2": "^0.15.10",
     "query-string": "^3.0.0",
     "react": "^0.14.3",
