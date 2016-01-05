@@ -22,7 +22,7 @@ export function getMetaDataFromState({ route, state, lang = 'en' }) {
         const { name, message, pictureURL } = state.currentActivation.activation;
         return {
             title: name,
-            siteName: "It's quiz",
+            siteName: "Company Name",
             image: pictureURL ? pictureURL.replace('svg', 'png') : '',
             description: message
         };
@@ -39,7 +39,7 @@ export function getMetaDataFromState({ route, state, lang = 'en' }) {
 
         return {
             title: strformat(sharePhrases[lang], {name, score: userQuizSession.score}),
-            siteName: "It's quiz",
+            siteName: "Company Name",
             image: pictureURL ? pictureURL.replace('svg', 'png') : '',
             description: message
         };
