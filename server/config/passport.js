@@ -8,12 +8,13 @@ export default function(app, passport, config) {
   // serialize sessions
   passport.serializeUser(function(user, done) {
     console.log('serialize')
-    done(null, user.id);
+    done(null, user);
   });
 
   passport.deserializeUser(function(id, done) {
     console.log('deserializeUser')
     User.findById(id, function(err, user) {
+      console.log(user);
       done(err, user);
     });
   });

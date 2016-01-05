@@ -9,11 +9,6 @@ import { Provider }              from 'react-redux';
 import { RoutingContext, match } from 'react-router';
 import escapeHTML                from 'lodash/string/escape';
 
-/* Authentication*/
-import passport from 'passport';
-import mongoose from 'mongoose';
-import secrets from './config/secrets';
-
 import passportConfig from './config/passport';
 
 import { fetchComponentsData,
@@ -39,18 +34,32 @@ const i18nToolsRegistry = {
     uk: new i18n.Tools({localeData: ukLocaleData, locale: 'uk'})
 };
 
-const app = express();
-app.use((req, res, next) => {
-    if (req.url.indexOf('/api') === 0) {
-        res.json({'test': 'appTest', "status": 1});
-    } else {
-        next();
-    }
+/* Authentication*/
+import passport from 'passport';
+import configPassport from './config/passport';
+import configExpress from './config/express';
+import configRoutes from './config/routes';
+import mongoose from 'mongoose';
+import connect from './config/db';
+import fs from 'fs';
 
+/* Mongoose */
+connect();
+mongoose.connection.on('error', console.error);
+mongoose.connection.on('disconnected', connect);
+
+fs.readdirSync(__dirname + '/models').forEach(function (file) {
+    if (~file.indexOf('.js')) require(__dirname + '/models/' + file);
 });
-
+const app = express();
 app.use('/static', express.static('public/static'));
 app.use(cookieParser());
+
+
+configPassport(app, passport);
+configExpress(app, passport);
+configRoutes(app, passport);
+
 
 app.use((req, res) => {
     // Process old links like /en/activations

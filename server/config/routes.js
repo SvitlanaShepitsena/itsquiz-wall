@@ -8,6 +8,13 @@ export default  function (app, passport) {
     app.post('/signup', users.postSignUp);
     app.get('/logout', users.getLogout);
 
+    app.get('/auth/google/callback',
+        passport.authenticate('google', {failureRedirect: '/login'}),
+        function (req, res) {
+            // Successful authentication, redirect home.
+            res.redirect('/tutorials');
+        });
+
     // google auth
     // Redirect the user to Google for authentication. When complete, Google
     // will redirect the user back to the application at
@@ -16,6 +23,8 @@ export default  function (app, passport) {
     // here https://developers.google.com/identity/protocols/OpenIDConnect#scope-param
     app.get('/auth/google', passport.authenticate('google', {
         scope: [
+            'https://www.googleapis.com/auth/plus.login',
+            'https://www.googleapis.com/auth/plus.me',
             'https://www.googleapis.com/auth/userinfo.profile',
             'https://www.googleapis.com/auth/userinfo.email'
         ]
@@ -24,33 +33,6 @@ export default  function (app, passport) {
     // Google will redirect the user to this URL after authentication. Finish the
     // process by verifying the assertion. If valid, the user will be logged in.
     // Otherwise, the authentication has failed.
-    app.get('/auth/google/callback',
-        passport.authenticate('google', {
-            successRedirect: '/',
-            failureRedirect: '/login'
-        }));
-
-    // topic routes
-    app.get('/topic', topics.all);
-
-    app.post('/topic', function (req, res) {
-        topics.add(req, res);
-    });
-
-    app.put('/topic', function (req, res) {
-        topics.update(req, res);
-    });
-
-    app.delete('/topic', function (req, res) {
-        topics.remove(req, res);
-    });
-
-    // This is where the magic happens. We take the locals data we have already
-    // fetched and seed our stores with data.
-    // App is a function that requires store data and url to initialize and return the React-rendered html string
-    app.get('*', function (req, res, next) {
-        App(req, res);
-    });
 
 };
 ;

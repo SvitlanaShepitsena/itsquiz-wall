@@ -4,7 +4,7 @@
   "staticUrl": "http://localhost:8050",
   "loginUrl": "http://localhost:3001/tutorials",
   "embedOrigin": "http://localhost:3001/tutorials",
-  "socialAuthURL": "http://localhost:3001/auth/",
+  "socialAuthURL": "http://localhost:3001/auth/{socialType}",
   "emailAuthURL": "http://localhost:3001/auth/local/",
   "facebookAppId": "XXX",
   "gaTrackingCode": "XXX",
