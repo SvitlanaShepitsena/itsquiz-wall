@@ -17,7 +17,6 @@ import history from '../shared/history.js';
 import i18n from '../shared/i18n';
 
 const initialState = window.__INITIAL_STATE__ || {};
-console.log(initialState);
 const store = configureStore(initialState);
 const locale = cookie.parse(document.cookie).locale || DEFAULT_LOCALE;
 

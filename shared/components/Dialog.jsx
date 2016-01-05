@@ -1,6 +1,6 @@
 'use strict';
 
-if ( process.env.BROWSER ) {
+if (process.env.BROWSER) {
     require('./Dialog.less');
 }
 
@@ -11,9 +11,9 @@ import ReactModal from 'react-modal';
 
 export default class Dialog extends Component {
     static propTypes = {
-        title          : PropTypes.string,
-        isOpen         : PropTypes.bool,
-        onRequestClose : PropTypes.func
+        title: PropTypes.string,
+        isOpen: PropTypes.bool,
+        onRequestClose: PropTypes.func
     };
 
     static defaultProps = {
@@ -22,29 +22,28 @@ export default class Dialog extends Component {
 
     render() {
         const { isOpen, title, children, className, onRequestClose } = this.props;
-
         const styles = {
-            overlay : {
-                backgroundColor : 'rgba(0, 0, 0, 0.5)'
+            overlay: {
+                backgroundColor: 'rgba(0, 0, 0, 0.5)'
             },
-            content : {
-                position : 'static',
-                outline  : 'none'
+            content: {
+                position: 'static',
+                outline: 'none'
             }
         };
 
         return (
             <ReactModal
-                className      = {cx('Dialog', className)}
-                isOpen         = {isOpen}
-                style          = {styles}
-                onRequestClose = {onRequestClose}>
-                    {
-                        title
-                        ? <h1 className = 'Dialog__title'>{title}</h1>
+                className={cx('Dialog', className)}
+                isOpen={isOpen}
+                style={styles}
+                onRequestClose={onRequestClose}>
+                {
+                    title
+                        ? <h1 className='Dialog__title'>{title}</h1>
                         : null
-                    }
-                    {children}
+                }
+                {children}
             </ReactModal>
         );
     }

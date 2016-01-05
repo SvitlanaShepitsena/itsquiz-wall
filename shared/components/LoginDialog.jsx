@@ -48,23 +48,6 @@ export default class LoginDialog extends Component {
                             <Icon type='google-plus' className='LoginDialog__icon'/>
                         </div>
 
-                        <div
-                            className='LoginDialog__button LoginDialog__button--vkontakte'
-                            onClick={onSocialLogin.bind(null, 'vkontakte')}>
-                            <Icon type='vk' className='LoginDialog__icon'/>
-                        </div>
-
-                        <div
-                            className='LoginDialog__button LoginDialog__button--linkedin'
-                            onClick={onSocialLogin.bind(null, 'linkedin')}>
-                            <Icon type='linkedin' className='LoginDialog__icon'/>
-                        </div>
-
-                        <div
-                            className='LoginDialog__button LoginDialog__button--github'
-                            onClick={onSocialLogin.bind(null, 'github')}>
-                            <Icon type='github-circle' className='LoginDialog__icon'/>
-                        </div>
                     </div>
 
                     <h4 className='LoginDialog__title LoginDialog__title--clickable' onClick={onEmailLogin}>
