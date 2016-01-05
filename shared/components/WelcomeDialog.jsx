@@ -8,7 +8,6 @@ import Checkbox    from 'react-mdl/lib/Checkbox';
 
 if (process.env.BROWSER) {
     require('./WelcomeDialog.less');
-    require('./Buttons.less');
 }
 
 export default class WelcomeDialog extends Component {
@@ -63,7 +62,7 @@ export default class WelcomeDialog extends Component {
         const slides = [
             <div className='WelcomeDialog__slide'>
                 <div className='WelcomeDialog__slide-image'>
-                    <img src="/static/images/welcome/01.png"/>
+                    <img src="/static/images/welcome/01.svg"/>
                 </div>
 
                 <div className='WelcomeDialog__slide-content'>
@@ -77,13 +76,13 @@ export default class WelcomeDialog extends Component {
 
             <div className='WelcomeDialog__slide'>
                 <div className='WelcomeDialog__slide-image'>
-                    <img src="/static/images/welcome/03.png"/>
+                    <img src="/static/images/welcome/02.svg"/>
                 </div>
 
                 <div className='WelcomeDialog__slide-content'>
                     <h1>{l('Page 2')}</h1>
                     <p> {l('Blandit orci sodales vel. Nam imperdiet felis eget quam aliquam, sit amet.')}</p>
-                    <Button className='WelcomeDialog__btn' raised colored onClick={onDiscoverTests}>
+                    <Button className='WelcomeDialog__btn btn-primary' raised onClick={onDiscoverTests}>
                         {l('Discover tests')}
                     </Button>
                 </div>
@@ -91,13 +90,13 @@ export default class WelcomeDialog extends Component {
 
             <div className='WelcomeDialog__slide'>
                 <div className='WelcomeDialog__slide-image'>
-                    <img src="/static/images/welcome/04.png"/>
+                    <img src="/static/images/welcome/03.svg"/>
                 </div>
 
                 <div className='WelcomeDialog__slide-content'>
                     <h1>{l('Page 3')}</h1>
                     <p> {l('Blandit orci sodales vel. Nam imperdiet felis eget quam aliquam, sit amet.')}</p>
-                    <Button className='WelcomeDialog__btn' raised colored onClick={onCreateTest}>
+                    <Button className='WelcomeDialog__btn btn-primary' raised onClick={onCreateTest}>
                         {l('Create a vacancy')}
                     </Button>
                 </div>
@@ -105,13 +104,13 @@ export default class WelcomeDialog extends Component {
 
             <div className='WelcomeDialog__slide'>
                 <div className='WelcomeDialog__slide-image'>
-                    <img src="/static/images/welcome/02.png"/>
+                    <img src="/static/images/welcome/05.svg"/>
                 </div>
 
                 <div className='WelcomeDialog__slide-content'>
                     <h1>{l('Page 3')}</h1>
                     <p> {l('Blandit orci sodales vel. Nam imperdiet felis eget quam aliquam, sit amet.')}</p>
-                    <Button className='WelcomeDialog__btn' raised colored onClick={onCreateTest}>
+                    <Button className='WelcomeDialog__btn btn-primary' raised onClick={onCreateTest}>
                         {l('Create a test')}
                     </Button>
                 </div>
