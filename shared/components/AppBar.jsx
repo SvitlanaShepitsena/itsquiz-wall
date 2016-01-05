@@ -13,7 +13,7 @@ if ( process.env.BROWSER ) {
     require('./AppBar.less');
 }
 
-const LOGO_SRC = '/static/logo.png';
+const LOGO_SRC = './static/logo.svg';
 
 export default class AppBar extends Component {
     static contextTypes = { i18n: PropTypes.object };
@@ -113,7 +113,7 @@ export default class AppBar extends Component {
                     {
                         rightIconName
                             ? <IconButton name={rightIconName} onClick={onRightIconClick} />
-                            : <img width='40px' height='40px' src={LOGO_SRC} className='AppBar__logo'/>
+                            : <img width='70px' height='70px' src={LOGO_SRC} className='AppBar__logo'/>
                     }
 
                     <h2 className='AppBar__title'> {title} </h2>

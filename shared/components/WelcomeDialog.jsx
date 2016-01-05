@@ -8,6 +8,7 @@ import Checkbox    from 'react-mdl/lib/Checkbox';
 
 if (process.env.BROWSER) {
     require('./WelcomeDialog.less');
+    require('./Buttons.less');
 }
 
 export default class WelcomeDialog extends Component {
@@ -68,7 +69,7 @@ export default class WelcomeDialog extends Component {
                 <div className='WelcomeDialog__slide-content'>
                     <h1> {l('Welcome Slider')} </h1>
                     <p> {l('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac sapien id mauris.')} </p>
-                    <Button className='WelcomeDialog__btn' raised colored onClick={this.handleNextSlide}>
+                    <Button className='WelcomeDialog__btn btn-accent' raised ripple onClick={this.handleNextSlide}>
                         {l('Learn more')}
                     </Button>
                 </div>

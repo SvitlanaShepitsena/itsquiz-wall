@@ -48,7 +48,7 @@ export function getMetaDataFromState({ route, state, lang = 'en' }) {
     return {
         title       : 'Quiz Wall',
         siteName    : 'It\'s quiz',
-        image       : 'http://app.itsquiz.com/be/static/images/logo.png',
+        image       : 'http://app.itsquiz.com/be/static/images/logo.svg',
         description : 'Discover tons of different vacancies, tests, quizzes, questionnaires and more...'
     };
 }

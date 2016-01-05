@@ -18,7 +18,6 @@ export default (
     <Route component={App}>
         <Route component={MainLayout} path='/'>
             <Redirect from='/' to='/en/tutorials' />
-
             <Route component={ActivationsPageContainer} path='/tutorials'/>
             <Route component={ActivationPageContainer} path='/tutorials/:id'/>
 
