@@ -66,9 +66,8 @@ export default class WelcomeDialog extends Component {
                 </div>
 
                 <div className='WelcomeDialog__slide-content'>
-                    <h1> {l('Welcome to It\'s quiz!')} </h1>
-                    <p> {l('Explore hundreds of open tests on Quiz Wall, check your knowledge, explore new topics, '
-                        + 'share your achievements with friends!')}
+                    <h1> {l('Welcome Slider')} </h1>
+                    <p> {l('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac sapien id mauris consectetur gravida et eu arcu. Mauris condimentum arcu tellus, vel blandit orci sodales vel. Nam imperdiet felis eget quam aliquam, sit amet viverra augue sollicitudin. Sed volutpat orci ac velit tristique.')}
                     </p>
                     <Button className='WelcomeDialog__btn' raised colored onClick={this.handleNextSlide}>
                         {l('Learn more')}

@@ -9,11 +9,11 @@ import { sendEvent } from '../utils/googleAnalytics';
 
 export default class WelcomeDialogContainer extends Component {
 
-    static contextTypes = { i18n: PropTypes.object };
+    static contextTypes = {i18n: PropTypes.object};
 
     static propTypes = {
-        isOpen         : PropTypes.bool.isRequired,
-        onDismiss      : PropTypes.func.isRequired
+        isOpen: PropTypes.bool.isRequired,
+        onDismiss: PropTypes.func.isRequired
     };
 
     handleLearnMoreAboutItsquz = () => {
@@ -41,11 +41,11 @@ export default class WelcomeDialogContainer extends Component {
 
         return (
             <WelcomeDialog
-                isOpen = {isOpen}
-                onLearnMoreAboutItsquiz = {this.handleLearnMoreAboutItsquz}
-                onDiscoverTests = {this.handleDiscoverTests}
-                onCreateTest = {this.handleCreateTest}
-                onDismiss = {onDismiss}
+                isOpen={isOpen}
+                onLearnMoreAboutItsquiz={this.handleLearnMoreAboutItsquz}
+                onDiscoverTests={this.handleDiscoverTests}
+                onCreateTest={this.handleCreateTest}
+                onDismiss={onDismiss}
             />
         );
     }
