@@ -14,8 +14,8 @@ export default class WelcomeDialogContainer extends Component {
         onDismiss: PropTypes.func.isRequired
     };
 
-    handleLearnMoreAboutItsquz = () => {
-        window.open(welcomeLinks.aboutItsquiz, '_blank');
+    handleLearnMoreAboutCompany = () => {
+        window.open(welcomeLinks.aboutCompany, '_blank');
     };
 
     handleDiscoverTests = () => {
@@ -40,7 +40,7 @@ export default class WelcomeDialogContainer extends Component {
         return (
             <WelcomeDialog
                 isOpen={isOpen}
-                onLearnMoreAboutItsquiz={this.handleLearnMoreAboutItsquz}
+                onLearnMoreAboutCompany={this.handleLearnMoreAboutCompany}
                 onDiscoverTests={this.handleDiscoverTests}
                 onCreateTest={this.handleCreateTest}
                 onDismiss={onDismiss}

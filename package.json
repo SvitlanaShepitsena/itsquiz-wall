@@ -1,11 +1,11 @@
 {
   "name": "itsquiz-wall",
   "version": "0.0.1",
-  "description": "QuizWall for itsquiz.com",
+  "description": "Universal Isomorfic React Redux App Boilerplate",
   "author": {
-    "name": "WebbyLab",
-    "email": "office@webbylab.com",
-    "url": "http://webbylab.com"
+    "name": "",
+    "email": "",
+    "url": ""
   },
   "private": true,
   "scripts": {

@@ -56,7 +56,7 @@ export default class WelcomeDialog extends Component {
 
     render() {
         const { l } = this.context.i18n;
-        const { onCreateTest, onDiscoverTests, onLearnMoreAboutItsquiz } = this.props;
+        const { onCreateTest, onDiscoverTests, onLearnMoreAboutCompany } = this.props;
         const { currentSlide, needToSkip } = this.state;
 
         const slides = [
@@ -67,8 +67,7 @@ export default class WelcomeDialog extends Component {
 
                 <div className='WelcomeDialog__slide-content'>
                     <h1> {l('Welcome Slider')} </h1>
-                    <p> {l('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac sapien id mauris consectetur gravida et eu arcu. Mauris condimentum arcu tellus.')}
-                    </p>
+                    <p> {l('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac sapien id mauris.')} </p>
                     <Button className='WelcomeDialog__btn' raised colored onClick={this.handleNextSlide}>
                         {l('Learn more')}
                     </Button>
@@ -82,7 +81,7 @@ export default class WelcomeDialog extends Component {
 
                 <div className='WelcomeDialog__slide-content'>
                     <h1>{l('Page 2')}</h1>
-                    <p> {l('Blandit orci sodales vel. Nam imperdiet felis eget quam aliquam, sit amet viverra augue sollicitudin. Sed volutpat orci ac velit tristique!')}</p>
+                    <p> {l('Blandit orci sodales vel. Nam imperdiet felis eget quam aliquam, sit amet.')}</p>
                     <Button className='WelcomeDialog__btn' raised colored onClick={onDiscoverTests}>
                         {l('Discover tests')}
                     </Button>
@@ -96,7 +95,7 @@ export default class WelcomeDialog extends Component {
 
                 <div className='WelcomeDialog__slide-content'>
                     <h1>{l('Page 3')}</h1>
-                    <p> {l('Blandit orci sodales vel. Nam imperdiet felis eget quam aliquam, sit amet viverra augue sollicitudin. Sed volutpat orci ac velit tristique!')}</p>
+                    <p> {l('Blandit orci sodales vel. Nam imperdiet felis eget quam aliquam, sit amet.')}</p>
                     <Button className='WelcomeDialog__btn' raised colored onClick={onCreateTest}>
                         {l('Create a vacancy')}
                     </Button>
@@ -110,7 +109,7 @@ export default class WelcomeDialog extends Component {
 
                 <div className='WelcomeDialog__slide-content'>
                     <h1>{l('Page 3')}</h1>
-                    <p> {l('Blandit orci sodales vel. Nam imperdiet felis eget quam aliquam, sit amet viverra augue sollicitudin. Sed volutpat orci ac velit tristique!')}</p>
+                    <p> {l('Blandit orci sodales vel. Nam imperdiet felis eget quam aliquam, sit amet.')}</p>
                     <Button className='WelcomeDialog__btn' raised colored onClick={onCreateTest}>
                         {l('Create a test')}
                     </Button>

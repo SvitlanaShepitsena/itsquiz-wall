@@ -1,27 +1,27 @@
 {
-    "apiPrefix": "http://app.itsquiz.com/api/v1",
-    "backgroundImagesPrefix": "http://app.itsquiz.com/be/static/images/backgrounds/",
-    "staticUrl": "http://localhost:8050",
-    "loginUrl": "http://app.itsquiz.com/{lang}/login",
-    "embedOrigin": "http://app.itsquiz.com/",
-    "socialAuthURL": "http://app.itsquiz.com/api/v1/auth/{socialType}?lang={lang}&continue={continueRoute}",
-    "emailAuthURL": "http://app.itsquiz.com/{lang}/login?opened=true&continue={continueRoute}",
-    "facebookAppId": "XXX",
-    "gaTrackingCode": "XXX",
-    "quizwallShareLink": "http://itsquiz.com/activations",
-    "welcomeLinks": {
-        "createTest": "http://app.itsquiz.com/{lang}/login?continue=%2Fquestions",
-        "aboutItsquiz": "http://itsquiz.com/about/",
-        "discoverTests": "http://itsquiz.com/activations?skipWelcomeDialog=true"
-    },
-    "footerLinks": {
-        "twitter": "http://twitter.com/itsquizcom",
-        "facebook": "https://www.facebook.com/itsquiz",
-        "youtube": "https://www.youtube.com/channel/UClU6b5mtTVPPAv_L9dUzl_g",
-        "supportPage": "http://itsquiz.userecho.com/",
-        "suggestIdea": "http://itsquiz.userecho.com/",
-        "aboutItsquiz": "http://itsquiz.com/about/",
-        "ourTeam": "http://itsquiz.com/about/#team",
-        "helpMe": "mailto:support@itsquiz.com"
-    }
+  "apiPrefix": "http://localhost:3001/api",
+  "backgroundImagesPrefix": "http://localhost:3001/tutorials",
+  "staticUrl": "http://localhost:8050",
+  "loginUrl": "http://localhost:3001/tutorials",
+  "embedOrigin": "http://localhost:3001/tutorials",
+  "socialAuthURL": "http://localhost:3001/auth/",
+  "emailAuthURL": "http://localhost:3001/auth/local/",
+  "facebookAppId": "XXX",
+  "gaTrackingCode": "XXX",
+  "companywallShareLink": "http://localhost:3001/tutorials",
+  "welcomeLinks": {
+    "createTest": "http://localhost:3001/tutorials",
+    "aboutCompany": "http://localhost:3001/tutorials",
+    "discoverTests": "http://localhost:3001/tutorials"
+  },
+  "footerLinks": {
+    "twitter": "http://twitter.com",
+    "facebook": "https://www.facebook.com",
+    "youtube": "https://www.youtube.com/channel/UCLzTnoBTQuSSg7DUNRXlmtg/playlists",
+    "supportPage": "http://localhost:3001/tutorials",
+    "suggestIdea": "http://localhost:3001/tutorials",
+    "aboutCompany": "http://localhost:3001/tutorials",
+    "ourTeam": "http://localhost:3001/tutorials",
+    "helpMe": "mailto:support@appexample.com"
+  }
 }

@@ -3,13 +3,13 @@ import strformat          from 'strformat';
 
 import Footer from '../components/Footer.jsx';
 
-import { footerLinks, quizwallShareLink } from '../config';
+import { footerLinks, companywallShareLink } from '../config';
 
 import { sendEvent } from '../utils/googleAnalytics';
 
 export default class FooterContainer extends Component {
 
-    static contextTypes = { i18n: PropTypes.object };
+    static contextTypes = {i18n: PropTypes.object};
 
     state = {
         showShareDialog: false
@@ -25,7 +25,7 @@ export default class FooterContainer extends Component {
             });
         }
 
-        this.linkToShare = quizwallShareLink;
+        this.linkToShare = companywallShareLink;
     }
 
     handleLinkClick = (type) => {
@@ -33,12 +33,12 @@ export default class FooterContainer extends Component {
     };
 
     handleShare = () => {
-        this.setState({ showShareDialog: true });
+        this.setState({showShareDialog: true});
         sendEvent('footer', 'share');
     };
 
     handleShareClose = () => {
-        this.setState({ showShareDialog: false });
+        this.setState({showShareDialog: false});
     };
 
     render() {
