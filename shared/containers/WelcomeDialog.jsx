@@ -1,10 +1,8 @@
 import React, {Component, PropTypes} from 'react';
-import strformat                     from 'strformat';
-
+import strformat from 'strformat';
 import WelcomeDialog from '../components/WelcomeDialog.jsx';
 import { welcomeLinks } from '../config';
 import { sendEvent } from '../utils/googleAnalytics';
-
 export default class WelcomeDialogContainer extends Component {
 
     static contextTypes = {i18n: PropTypes.object};

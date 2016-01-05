@@ -21,10 +21,10 @@ export function getMetaDataFromState({ route, state, lang = 'en' }) {
     if (route === '/activations/:id') {
         const { name, message, pictureURL } = state.currentActivation.activation;
         return {
-            title       : name,
-            siteName    : "It's quiz",
-            image       : pictureURL ? pictureURL.replace('svg', 'png') : '',
-            description : message
+            title: name,
+            siteName: "Company Name",
+            image: pictureURL ? pictureURL.replace('svg', 'png') : '',
+            description: message
         };
     }
 
@@ -38,18 +38,18 @@ export function getMetaDataFromState({ route, state, lang = 'en' }) {
         const { isPassed, name, pictureURL, message, userQuizSession } = state.currentActivation.activation;
 
         return {
-            title       : strformat(sharePhrases[lang], { name, score: userQuizSession.score }),
-            siteName    : "It's quiz",
-            image       : pictureURL ? pictureURL.replace('svg', 'png') : '',
-            description : message
+            title: strformat(sharePhrases[lang], {name, score: userQuizSession.score}),
+            siteName: "Company Name",
+            image: pictureURL ? pictureURL.replace('svg', 'png') : '',
+            description: message
         };
     }
 
     return {
-        title       : 'Quiz Wall',
-        siteName    : 'It\'s quiz',
-        image       : 'http://app.itsquiz.com/be/static/images/logo.png',
-        description : 'Discover tons of different vacancies, tests, quizzes, questionnaires and more...'
+        title: 'Company Wall',
+        siteName: 'Company Name',
+        image: 'http://res.cloudinary.com/svitlana/image/upload/v1452030293/chicago-app/logo.png',
+        description: 'React with Redux Isomorphic App Boilerplate  ...'
     };
 }
 
@@ -61,7 +61,7 @@ export function makeRedirectUrl({originalUrl}) {
 export function detectLocale(req) {
     // Take locale passed by user
     const passedLocale = ( req.query.locale || req.cookies.locale || '' ).toLowerCase();
-    if ( getSupportedLocales().indexOf(passedLocale) >= 0 ) {
+    if (getSupportedLocales().indexOf(passedLocale) >= 0) {
         return passedLocale;
     }
 
@@ -71,8 +71,8 @@ export function detectLocale(req) {
     const country = ( geo && geo.country );
 
     return {
-        'UA': 'uk',
-        'RU': 'ru'
-    }[country] || 'en';
+            'UA': 'uk',
+            'RU': 'ru'
+        }[country] || 'en';
 }
 
