@@ -54,7 +54,7 @@ export function getMetaDataFromState({ route, state, lang = 'en' }) {
 }
 
 export function makeRedirectUrl({originalUrl}) {
-    const UIWallPath = `${clientConfig.embedOrigin}/quizwall`;
+    const UIWallPath = `${clientConfig.embedOrigin}/companywall`;
     return `${UIWallPath}${originalUrl}`;
 }
 

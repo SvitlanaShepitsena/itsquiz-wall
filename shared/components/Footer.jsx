@@ -3,12 +3,12 @@ import React, {Component, PropTypes} from 'react';
 import Icon from './Icon.jsx';
 import ShareDialog from '../containers/ShareDialog.jsx';
 
-if ( process.env.BROWSER ) {
+if (process.env.BROWSER) {
     require('./Footer.less');
 }
 
 export default class Footer extends Component {
-    static contextTypes = { i18n: PropTypes.object };
+    static contextTypes = {i18n: PropTypes.object};
 
     render() {
         const { l } = this.context.i18n;
@@ -17,10 +17,10 @@ export default class Footer extends Component {
         return (
             <div className='Footer'>
                 <ShareDialog
-                    title = {l('Share this page')}
-                    isOpen = {showShareDialog}
-                    linkToShare = {linkToShare}
-                    onRequestClose = {onShareClose}
+                    title={l('Share this page')}
+                    isOpen={showShareDialog}
+                    linkToShare={linkToShare}
+                    onRequestClose={onShareClose}
                 />
                 <div className="Footer__content">
                     <div className="Footer__menus-container">
@@ -77,7 +77,7 @@ export default class Footer extends Component {
                                     <a
                                         href={links.helpMe}
                                         target='_blank'
-                                        onClick={onLinkClick.bind(null, 'helpMe')} >
+                                        onClick={onLinkClick.bind(null, 'helpMe')}>
                                         {l('Need help?')}
                                     </a>
                                 </li>
@@ -85,13 +85,13 @@ export default class Footer extends Component {
                         </div>
 
                         <div className="Footer__menu">
-                            <h3 className="Footer__menu-header">{l('Do you like It\'s quiz?')}</h3>
+                            <h3 className="Footer__menu-header">{l('Do you like "Company Name?"')}</h3>
                             <ul className="Footer__menu-items">
                                 <li>
                                     <a
-                                        href={links.aboutItsquiz}
+                                        href={links.aboutCompany}
                                         target='_blank'
-                                        onClick={onLinkClick.bind(null, 'aboutItsquiz')}>
+                                        onClick={onLinkClick.bind(null, 'aboutCompany')}>
                                         {l('Read more')}
                                     </a>
                                 </li>

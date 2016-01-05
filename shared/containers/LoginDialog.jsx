@@ -11,18 +11,18 @@ import { sendEvent } from '../utils/googleAnalytics';
 export default class LoginDialogContainer extends Component {
 
     static propTypes = {
-        isOpen         : PropTypes.bool.isRequired,
-        onRequestClose : PropTypes.func
+        isOpen: PropTypes.bool.isRequired,
+        onRequestClose: PropTypes.func
     };
 
-    static contextTypes = { i18n: PropTypes.object };
+    static contextTypes = {i18n: PropTypes.object};
 
     handleSocialLogin = (type) => {
         const { getLocale } = this.context.i18n;
 
         const redirectURL = strformat(socialAuthURL, {
             lang: getLocale().toUpperCase(),
-            continueRoute: escapeHTML(`/quizwall${window.location.pathname + window.location.search}`),
+            continueRoute: escapeHTML(`/companywall${window.location.pathname + window.location.search}`),
             socialType: type
         });
 
@@ -36,7 +36,7 @@ export default class LoginDialogContainer extends Component {
 
         const redirectURL = strformat(emailAuthURL, {
             lang: getLocale().toLowerCase(),
-            continueRoute: escapeHTML(`/quizwall${window.location.pathname}`)
+            continueRoute: escapeHTML(`/companywall${window.location.pathname}`)
         });
 
         this.openLink(redirectURL);
@@ -53,10 +53,10 @@ export default class LoginDialogContainer extends Component {
 
         return (
             <LoginDialog
-                isOpen         = {isOpen}
-                onSocialLogin  = {this.handleSocialLogin}
-                onEmailLogin   = {this.handleEmailLogin}
-                onRequestClose = {onRequestClose}
+                isOpen={isOpen}
+                onSocialLogin={this.handleSocialLogin}
+                onEmailLogin={this.handleEmailLogin}
+                onRequestClose={onRequestClose}
             />
         );
     }
