@@ -8,11 +8,11 @@ export default () => {
         /* Client Side*/
         if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'test') {
             /* Production */
-            console.log('production');
+            //console.log('production');
 
         } else {
             /* Development */
-            console.log('dev');
+            //console.log('dev');
         }
     }
     return universalMiddleware;
