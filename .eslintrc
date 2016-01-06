@@ -146,7 +146,7 @@
         "require-yield": 2,
 
         // Legacy
-        "max-len": [2, 120, 4, { "ignoreComments": true, "ignoreUrls": true }],
+        "max-len": 0,
         "max-params": [2, 4],
         "no-bitwise": 2
     },
