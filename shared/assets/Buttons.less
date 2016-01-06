@@ -1,5 +1,12 @@
 @import "palette.less";
 
+.color-primary {
+  color: @primary-1-color;
+  &:hover, &:active, &:focus {
+    color: @primary-2-color;
+  }
+}
+
 .btn-primary {
   background-color: @primary-1-color;
   &:hover, &:active, &:focus {

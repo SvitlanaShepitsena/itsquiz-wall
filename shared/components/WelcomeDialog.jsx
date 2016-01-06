@@ -6,6 +6,9 @@ import Button      from 'react-mdl/lib/Button';
 import IconButton  from 'react-mdl/lib/IconButton';
 import Checkbox    from 'react-mdl/lib/Checkbox';
 
+import IconBase from 'react-icon-base';
+import Laptop from './common/icons/laptop.js';
+
 if (process.env.BROWSER) {
     require('./WelcomeDialog.less');
 }
@@ -61,12 +64,13 @@ export default class WelcomeDialog extends Component {
 
         const slides = [
             <div className='WelcomeDialog__slide'>
-                <div className='WelcomeDialog__slide-image'>
+                <div className='WelcomeDialog__slide-image' className="color-primary">
                     <img src="/static/images/welcome/01.svg"/>
                 </div>
 
                 <div className='WelcomeDialog__slide-content'>
                     <h1> {l('Welcome Slider')} </h1>
+                    <Laptop style={{color:'red'}}/>
                     <p> {l('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac sapien id mauris.')} </p>
                     <Button className='WelcomeDialog__btn btn-accent' raised ripple onClick={this.handleNextSlide}>
                         {l('Learn more')}
