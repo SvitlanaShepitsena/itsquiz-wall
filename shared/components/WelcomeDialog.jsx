@@ -68,8 +68,8 @@ export default class WelcomeDialog extends Component {
 
         const slides = [
             <div className='WelcomeDialog__slide'>
-                <div className='WelcomeDialog__slide-image' className="color-primary">
-                    <Isvg src="/static/images/welcome/01.svg"/>
+                <div className="my-svg">
+                    <Isvg src="/static/images/welcome/01.svg" fill="green"/>
                 </div>
 
                 <div className='WelcomeDialog__slide-content'>
