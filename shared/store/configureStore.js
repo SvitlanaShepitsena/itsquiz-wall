@@ -1,16 +1,20 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunkMiddleware from 'redux-thunk';
-
-import loggerMiddleware from 'redux-logger';
+import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from '../reducers/rootReducer';
+import middlewares from './composeMiddlewares';
+import DevTools from './configureDevTools';
 
-const createStoreWithMiddleware = applyMiddleware(
-    thunkMiddleware
-    // loggerMiddleware
+
+const finalCreateStore = compose(
+    // Middleware you want to use in development:
+    applyMiddleware(...middlewares()),
+    // Required! Enable Redux DevTools with the monitors you chose
+    typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : f => f
+
 )(createStore);
 
+
 export default function configureStore(initialState) {
-    const store = createStoreWithMiddleware(rootReducer, initialState);
+    const store = finalCreateStore(rootReducer, initialState);
 
     if (module.hot) {
         // Enable Webpack hot module replacement for reducers
