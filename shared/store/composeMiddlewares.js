@@ -14,8 +14,8 @@ export default () => {
         } else {
             /* Development */
             console.log('dev');
-            const chromeDevTools = window.devToolsExtension ? window.devToolsExtension() : f => f;
-             universalMiddleware.push(chromeDevTools);
+            // const chromeDevTools = window.devToolsExtension ? window.devToolsExtension() : f => f;
+            // universalMiddleware.push(chromeDevTools);
 
         }
     }
