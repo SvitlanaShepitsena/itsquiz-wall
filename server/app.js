@@ -63,6 +63,11 @@ configRoutes(app, passport);
 
 app.use((req, res) => {
     // Process old links like /en/activations
+    if (req.url === '/') {
+        return res.redirect(302,"/tutorials");
+    }
+
+
     if (req.url.match(/\/[a-z]{2}\//i)) {
         const noLangUrl = req.url.replace(/^\/[a-z]{2}/i, '');
         return res.redirect(302, noLangUrl);
