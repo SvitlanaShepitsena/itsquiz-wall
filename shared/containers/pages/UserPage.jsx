@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import { connect } from 'react-redux';
 
-import {loadUser} from '../../actions/users';
+import {loadUser} from '../../actions/user';
 import connectDataFetchers from '../../lib/connectDataFetchers.jsx';
 
 import UserPage from '../../components/pages/UserPage.jsx';

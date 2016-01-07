@@ -17,7 +17,7 @@ import UserPageContainer  from './containers/pages/UserPage.jsx';
 export default (
     <Route component={App}>
         <Route component={MainLayout} path='/'>
-            <Redirect from='/' to='/en/tutorials' />
+            <Redirect from='/' to='/tutorials' />
             <Route component={ActivationsPageContainer} path='/tutorials'/>
             <Route component={ActivationPageContainer} path='/tutorials/:id'/>
 

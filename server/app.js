@@ -80,7 +80,10 @@ app.use((req, res) => {
     }
 
     const locale = detectLocale(req);
-    const store = configureStore();
+    if (req.user) {
+        console.log(req.user);
+    }
+    const store = configureStore({user:req.user});
 
     const i18nTools = i18nToolsRegistry[locale];
     // Method of React-router that provides renderProp with property components consisting of all components for the particular view

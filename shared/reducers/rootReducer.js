@@ -2,6 +2,7 @@
 
 import { combineReducers } from 'redux';
 import apiResponseFormatter from '../utils/apiResponseFormatter';
+import user from './user';
 
 import {
     LOAD_ACTIVATIONS_SUCCESS,
@@ -11,11 +12,7 @@ import {
     CHANGE_ACTIVATIONS_CATEGORY
 } from '../actions/activations';
 
-import {
-    LOAD_USERS_SUCCESS,
-    LOAD_USER_SUCCESS,
-    LOAD_USER_FAIL
-} from '../actions/users';
+
 
 function activations(state = {activations: [], isLoading: true}, action) {
     switch (action.type) {
@@ -31,7 +28,8 @@ function activations(state = {activations: [], isLoading: true}, action) {
 
 
 const rootReducer = combineReducers({
-    activations
+    activations,
+    user
 });
 
 export default rootReducer;

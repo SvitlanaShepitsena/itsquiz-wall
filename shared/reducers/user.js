@@ -11,21 +11,21 @@ import {
 
 export default function user(state={
   isWaiting: false,
-  authenticated: false }, action={}) {
+  user: null }, action={}) {
   switch (action.type) {
-    case MANUAL_LOGIN:
+    case LOGIN:
       return Object.assign({}, state, {
         isWaiting: true
       });
     case LOGIN_SUCCESS:
       return Object.assign({}, state, {
         isWaiting: false,
-        authenticated: true
+        user: action.user
       });
     case LOGIN_ERROR:
       return Object.assign({}, state, {
         isWaiting: false,
-        authenticated: false
+        user:null
       });
     case SIGNUP:
       return Object.assign({}, state, {

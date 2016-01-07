@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 
 import { connect } from 'react-redux';
 
-import { loadUsers } from '../../actions/users';
+import { loadUsers } from '../../actions/user';
 import connectDataFetchers from '../../lib/connectDataFetchers.jsx';
 
 import UsersPage from '../../components/pages/UsersPage.jsx';

@@ -6,43 +6,45 @@ import cx                              from 'classnames';
 import SearchBox      from './SearchBox.jsx';
 import LanguageSwitch from '../containers/LanguageSwitch.jsx';
 import LoginDialog    from '../containers/LoginDialog.jsx';
+import {connect} from 'react-redux';
+import User from '../components/common/User';
 
 import IconButton from 'react-mdl/lib/IconButton';
 
-if ( process.env.BROWSER ) {
+if (process.env.BROWSER) {
     require('./AppBar.less');
 }
 
 const LOGO_SRC = './static/logo.svg';
 
-export default class AppBar extends Component {
-    static contextTypes = { i18n: PropTypes.object };
+class AppBar extends Component {
+    static contextTypes = {i18n: PropTypes.object};
 
     static propTypes = {
-        title            : PropTypes.string,
-        search           : PropTypes.string,
-        displayRightMenu : PropTypes.bool,
-        displaySearch    : PropTypes.bool,
-        rightIconName    : PropTypes.string,
-        fixOnScroll      : PropTypes.bool,
-        scrollOffset     : PropTypes.number,
-        onRightIconClick : PropTypes.func,
-        onSearch         : PropTypes.func
+        title: PropTypes.string,
+        search: PropTypes.string,
+        displayRightMenu: PropTypes.bool,
+        displaySearch: PropTypes.bool,
+        rightIconName: PropTypes.string,
+        fixOnScroll: PropTypes.bool,
+        scrollOffset: PropTypes.number,
+        onRightIconClick: PropTypes.func,
+        onSearch: PropTypes.func
     };
 
     static defaultProps = {
-        title            : '',
-        search           : '',
-        fixOnScroll      : true,
-        displaySearch    : false,
-        displayRightMenu : true,
-        rightIconName    : '',
-        scrollOffset     : 0
+        title: '',
+        search: '',
+        fixOnScroll: true,
+        displaySearch: false,
+        displayRightMenu: true,
+        rightIconName: '',
+        scrollOffset: 0
     };
 
     state = {
-        isFixedToTop : false,
-        isLoggingIn  : false
+        isFixedToTop: false,
+        isLoggingIn: false
     };
 
     handleScroll = () => {
@@ -53,7 +55,7 @@ export default class AppBar extends Component {
         const isFixedToTop = scrollTop > this.props.scrollOffset;
 
         if (isFixedToTop !== this.state.isFixedToTop) {
-            this.setState({ isFixedToTop });
+            this.setState({isFixedToTop});
         }
     };
 
@@ -82,6 +84,7 @@ export default class AppBar extends Component {
     }
 
     render() {
+        const user = this.props.user ? this.props.user.profile : null;
         const {
             title,
             search,
@@ -90,15 +93,15 @@ export default class AppBar extends Component {
             rightIconName,
             onRightIconClick,
             onSearch
-        } = this.props;
+            } = this.props;
 
         const { l } = this.context.i18n;
 
         const { isLoggingIn, isFixedToTop } = this.state;
 
         const rootClassNames = cx('AppBar', this.props.className, {
-            'AppBar--fixed'       : isFixedToTop,
-            'AppBar--with-search' : displaySearch
+            'AppBar--fixed': isFixedToTop,
+            'AppBar--with-search': displaySearch
         });
 
         return (
@@ -112,7 +115,7 @@ export default class AppBar extends Component {
                 <div className='AppBar__left'>
                     {
                         rightIconName
-                            ? <IconButton name={rightIconName} onClick={onRightIconClick} />
+                            ? <IconButton name={rightIconName} onClick={onRightIconClick}/>
                             : <img width='70px' height='70px' src={LOGO_SRC} className='AppBar__logo'/>
                     }
 
@@ -121,24 +124,34 @@ export default class AppBar extends Component {
                 {
                     displaySearch
                         ? (
-                            <div className='AppBar__center'>
-                            </div>
-                        )
+                        <div className='AppBar__center'>
+                        </div>
+                    )
                         : null
                 }
 
                 {
                     displayRightMenu
-                    ? <div className='AppBar__right'>
-                        <LanguageSwitch className='AppBar__lang' />
-                        <span className='AppBar__menu-item' onClick={this.handleLogin}>
-                            {l('Sign up / Sign in')}
-                        </span>
+                        ? <div className='AppBar__right'>
+                        <LanguageSwitch className='AppBar__lang'/>
+                        <div className='AppBar__menu-item' >
+                            {user && <User user={user}/>}
+                            {!user && <div onClick={this.handleLogin}>{l('Sign up / Sign in')}</div>}
+                        </div>
                     </div>
-                    : null
+                        : null
                 }
             </div>
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        user: state.user
+
+    };
+}
+
+export default connect(mapStateToProps)(AppBar);
 
