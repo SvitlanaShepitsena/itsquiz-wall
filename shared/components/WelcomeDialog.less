@@ -1,12 +1,14 @@
 @import "../assets/mixins.less";
 @import "../assets/palette.less";
+@import "../assets/colors.less";
 @import "../assets/media.less";
 @import "../assets/buttons.less";
+@import "../assets/typography.less";
 
 @button-area: 64px;
 
 .my-svg {
-  color:green !important;
+  color: green !important;
   fill: currentColor;
 }
 
@@ -38,7 +40,6 @@
 .WelcomeDialog__close {
   display: block;
   position: absolute;
-  color: @grey-500;
   top: 10px;
   right: 10px;
 }
@@ -123,4 +124,8 @@
       font-size: 14px;
     }
   }
+}
+
+.btn-icon-grey {
+  color: #393939 !important;
 }
