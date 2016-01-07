@@ -5,8 +5,9 @@ var _ = require('lodash');
 export default  function (app, passport) {
     // user routes
     app.post('/login', users.postLogin);
-    app.post('/signup', users.postSignUp);
     app.get('/logout', users.getLogout);
+
+    app.post('/signup', users.postSignUp);
 
     app.get('/auth/google/callback',
         passport.authenticate('google', {failureRedirect: '/login'}),
