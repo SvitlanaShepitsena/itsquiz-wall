@@ -6,7 +6,6 @@ import Button      from 'react-mdl/lib/Button';
 import IconButton  from 'react-mdl/lib/IconButton';
 import Checkbox    from 'react-mdl/lib/Checkbox';
 
-import IconBase from 'react-icon-base';
 import Laptop from './common/icons/laptop.js';
 
 import Isvg from 'react-inlinesvg';
@@ -71,8 +70,7 @@ export default class WelcomeDialog extends Component {
                 </div>
 
                 <div className='WelcomeDialog__slide-content'>
-                    <h1 className="color-indigo-app"> {l('Welcome Slider')} </h1>
-                    <Laptop className="color-primary"/>
+                    <h1> {l('Welcome Slider')} </h1>
                     <p> {l('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac sapien id mauris.')} </p>
                     <Button className='WelcomeDialog__btn btn-accent' raised ripple onClick={this.handleNextSlide}>
                         {l('Learn more')}
@@ -133,13 +131,14 @@ export default class WelcomeDialog extends Component {
                     {...this.props}>
                     <div className='WelcomeDialog__content'>
                         <IconButton ripple
-                                    className='WelcomeDialog__close'
+                                    className='WelcomeDialog__close color-grey-app'
                                     name='close'
                                     onClick={this.handleClose}
                         />
 
                         <div className='WelcomeDialog__carousel'>
                             <IconButton ripple
+                                        className="btn-icon-grey"
                                         name='keyboard_arrow_left'
                                         disabled={currentSlide === 0}
                                         onClick={this.handlePrevSlide}
@@ -150,6 +149,7 @@ export default class WelcomeDialog extends Component {
                             </div>
 
                             <IconButton ripple
+                                        className="btn-icon-grey"
                                         name='keyboard_arrow_right'
                                         onClick={this.handleNextSlide}
                             />
