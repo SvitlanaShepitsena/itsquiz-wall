@@ -6,8 +6,6 @@ import Button      from 'react-mdl/lib/Button';
 import IconButton  from 'react-mdl/lib/IconButton';
 import Checkbox    from 'react-mdl/lib/Checkbox';
 
-import Laptop from './common/icons/laptop.js';
-
 import Isvg from 'react-inlinesvg';
 
 if (process.env.BROWSER) {
@@ -65,8 +63,10 @@ export default class WelcomeDialog extends Component {
 
         const slides = [
             <div className='WelcomeDialog__slide'>
-                <div className="svg-primary">
-                    <Isvg src="/static/images/welcome/01.svg"/>
+                <div className="WelcomeDialog__slide-image">
+                    <div className="svg-primary">
+                        <Isvg src="/static/images/welcome/01.svg" alt="image"></Isvg>
+                    </div>
                 </div>
 
                 <div className='WelcomeDialog__slide-content'>
@@ -80,7 +80,10 @@ export default class WelcomeDialog extends Component {
 
             <div className='WelcomeDialog__slide'>
                 <div className='WelcomeDialog__slide-image'>
-                    <img src="/static/images/welcome/02.svg"/>
+                    <div className="svg-primary">
+                        <span style={{display:"none"}}>text</span>
+                        <Isvg src="/static/images/welcome/02.svg" alt="image"></Isvg>
+                    </div>
                 </div>
 
                 <div className='WelcomeDialog__slide-content'>
@@ -94,7 +97,9 @@ export default class WelcomeDialog extends Component {
 
             <div className='WelcomeDialog__slide'>
                 <div className='WelcomeDialog__slide-image'>
-                    <img src="/static/images/welcome/03.svg"/>
+                    <div className="svg-primary">
+                        <Isvg src="/static/images/welcome/03.svg" alt="image"></Isvg>
+                    </div>
                 </div>
 
                 <div className='WelcomeDialog__slide-content'>
@@ -107,12 +112,12 @@ export default class WelcomeDialog extends Component {
             </div>,
 
             <div className='WelcomeDialog__slide'>
-                <div className='WelcomeDialog__slide-image'>
-                    <img src="/static/images/welcome/05.svg"/>
+                <div className='WelcomeDialog__slide-image svg-primary'>
+                    <Isvg src="/static/images/welcome/05.svg" alt="image"></Isvg>
                 </div>
 
                 <div className='WelcomeDialog__slide-content'>
-                    <h1>{l('Page 3')}</h1>
+                    <h1>{l('Page 4')}</h1>
                     <p> {l('Blandit orci sodales vel. Nam imperdiet felis eget quam aliquam, sit amet.')}</p>
                     <Button className='WelcomeDialog__btn btn-primary' raised onClick={onCreateTest}>
                         {l('Create a test')}
@@ -131,14 +136,13 @@ export default class WelcomeDialog extends Component {
                     {...this.props}>
                     <div className='WelcomeDialog__content'>
                         <IconButton ripple
-                                    className='WelcomeDialog__close color-grey-app'
+                                    className='WelcomeDialog__close'
                                     name='close'
                                     onClick={this.handleClose}
                         />
 
                         <div className='WelcomeDialog__carousel'>
                             <IconButton ripple
-                                        className="btn-icon-grey"
                                         name='keyboard_arrow_left'
                                         disabled={currentSlide === 0}
                                         onClick={this.handlePrevSlide}
