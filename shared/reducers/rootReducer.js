@@ -10,7 +10,7 @@ import {
     LOAD_ARTICLE_SUCCESS,
     LOAD_ARTICLE_FAIL,
     CHANGE_ARTICLES_CATEGORY
-} from '../actions/articles';
+} from '../actions/article';
 
 function articles(state = {articles: [], isLoading: true}, action) {
     switch (action.type) {
@@ -25,7 +25,7 @@ function articles(state = {articles: [], isLoading: true}, action) {
 }
 
 const rootReducer = combineReducers({
-    article,
+    articles,
     user
 });
 

@@ -56,7 +56,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(articleActions, dispatch);
 }
-MainLayoutContainer.need=[
-    articleActions.articlesGet
-]
-export default connect(mapStateToProps, mapDispatchToProps)(MainLayoutContainer );
+//MainLayoutContainer.need=[
+//    articleActions.articlesGet
+//]
+export default MainLayoutContainer ;

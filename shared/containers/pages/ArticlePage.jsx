@@ -4,7 +4,7 @@ import React, {Component, PropTypes} from 'react';
 import { connect }                   from 'react-redux';
 import strformat                     from 'strformat';
 
-import { loadArticle }  from '../../actions/articles';
+import { loadArticle }  from '../../actions/article';
 import connectDataFetchers from '../../lib/connectDataFetchers.jsx';
 import EmbedEvents         from '../../utils/EmbedEventsUtil';
 import config              from '../../config';
