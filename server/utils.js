@@ -18,8 +18,8 @@ export function fetchComponentsData(dispatch, components, params, query) {
 }
 
 export function getMetaDataFromState({ route, state, lang = 'en' }) {
-    if (route === '/activations/:id') {
-        const { name, message, pictureURL } = state.currentActivation.activation;
+    if (route === '/articles/:id') {
+        const { name, message, pictureURL } = state.currentArticle.article;
         return {
             title: name,
             siteName: "Company Name",
@@ -28,14 +28,14 @@ export function getMetaDataFromState({ route, state, lang = 'en' }) {
         };
     }
 
-    if (route === '/result/:id/:userId' && state.currentActivation.activation) {
+    if (route === '/result/:id/:userId' && state.currentArticle.article) {
         const sharePhrases = {
             ru: 'Я сдал тест "{name}" на {score}%',
             uk: 'Я склав тест "{name}" на {score}%',
             en: 'I have passed test "{name}" and gained {score}%'
         };
 
-        const { isPassed, name, pictureURL, message, userQuizSession } = state.currentActivation.activation;
+        const { isPassed, name, pictureURL, message, userQuizSession } = state.currentArticle.article;
 
         return {
             title: strformat(sharePhrases[lang], {name, score: userQuizSession.score}),

@@ -10,16 +10,16 @@ import AppBar      from '../AppBar.jsx';
 import ShareDialog from '../../containers/ShareDialog.jsx';
 
 if (process.env.BROWSER) {
-    require('./ActivationsPage.less');
+    require('./ArticlesPage.less');
 }
 
 const CATEGORIES = ['ALL', 'ANGULAR', 'REACT', 'REDUX'];
 
-export default class ActivationsPage extends React.Component {
+export default class ArticlesPage extends React.Component {
     static contextTypes = {i18n: React.PropTypes.object};
 
     static propTypes = {
-        activations: React.PropTypes.arrayOf(React.PropTypes.object),
+        articles: React.PropTypes.arrayOf(React.PropTypes.object),
         search: React.PropTypes.string,
         onItemClick: React.PropTypes.func,
         onShare: React.PropTypes.func,
@@ -28,15 +28,15 @@ export default class ActivationsPage extends React.Component {
 
     renderContent = () => {
         const { l } = this.context.i18n;
-        const { activations, search, isLoading, isEmpty, onItemClick, onShare } = this.props;
+        const { articles, search, isLoading, isEmpty, onItemClick, onShare } = this.props;
 
         if (isLoading) {
-            return <Spinner className='ActivationsPage__spinner'/>;
+            return <Spinner className='ArticlesPage__spinner'/>;
         }
 
         if (isEmpty && search) {
             return (
-                <div className='ActivationsPage__empty-state'>
+                <div className='ArticlesPage__empty-state'>
                     {l('Sorry, we couldn\'t find any tests for ')} <strong> {search} </strong>
                 </div>
             );
@@ -44,22 +44,22 @@ export default class ActivationsPage extends React.Component {
 
         if (isEmpty) {
             return (
-                <div className='ActivationsPage__empty-state'>
-                    {l('There are no activations in this category yet')}
+                <div className='ArticlesPage__empty-state'>
+                    {l('There are no articles in this category yet')}
                 </div>
             );
         }
 
         return (
-            <Grid className='ActivationsPage__list'>
-                {activations.map(activation =>
+            <Grid className='ArticlesPage__list'>
+                {articles.map(article =>
                     <Cell
-                        key={activation.youtubeId}
+                        key={article.youtubeId}
                         align='top'
                         col={3}
                         tablet={4}
                         phone={12}>
-                        <QuizCard>{activation.title}</QuizCard>
+                        <QuizCard>{article.title}</QuizCard>
                     </Cell>
                 )}
             </Grid>
@@ -81,9 +81,9 @@ export default class ActivationsPage extends React.Component {
 
         const { l } = this.context.i18n;
 
-        const classes = cx('ActivationsPage', {
-            'ActivationsPage--embedded': isEmbedded,
-            'ActivationsPage--loading': isLoading
+        const classes = cx('ArticlesPage', {
+            'ArticlesPage--embedded': isEmbedded,
+            'ArticlesPage--loading': isLoading
         });
 
         return (
@@ -95,22 +95,22 @@ export default class ActivationsPage extends React.Component {
                     onRequestClose={onStopSharing}
                 />
 
-                <div className='ActivationsPage__header'>
+                <div className='ArticlesPage__header'>
                     <AppBar
                         title={l('Chicago Wep App')}
                         search={search}
-                        className='ActivationsPage__app-bar'
+                        className='ArticlesPage__app-bar'
                         fixOnScroll={false}
                         scrollOffset={65}
                         displaySearch={true}
                         onSearch={onSearch}
                     />
 
-                    <div className='ActivationsPage__tab-bar'>
+                    <div className='ArticlesPage__tab-bar'>
                         <Tabs
                             ripple={true}
                             activeTab={selectedCategory ? CATEGORIES.indexOf(selectedCategory) : 0}
-                            className='ActivationsPage__tabs'
+                            className='ArticlesPage__tabs'
                             onChange={(index) => onTabChange(CATEGORIES[index])}>
                             <Tab>{l('All Tutorials')}</Tab>
                             <Tab>{l('Angular')}</Tab>
@@ -120,7 +120,7 @@ export default class ActivationsPage extends React.Component {
                     </div>
                 </div>
 
-                <div className='ActivationsPage__content'>
+                <div className='ArticlesPage__content'>
                     {this.renderContent()}
                 </div>
             </div>

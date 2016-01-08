@@ -3,21 +3,21 @@
 import React, {Component, PropTypes} from 'react';
 import { connect }                   from 'react-redux';
 
-import { loadActivation }  from '../../actions/activations';
+import { loadArticle }  from '../../actions/articles';
 import connectDataFetchers from '../../lib/connectDataFetchers.jsx';
 import { sendEvent }       from '../../utils/googleAnalytics';
 
 class ShareResultPageContainer extends Component {
     componentDidMount() {
         const { id, userId } = this.props.params;
-        const { activation } = this.props;
+        const { article } = this.props;
 
-        if (activation.isPrivate) {
-            this.props.history.replaceState(null, `/activations`, {
+        if (article.isPrivate) {
+            this.props.history.replaceState(null, `/articles`, {
                 ...this.props.location.query
             });
         } else {
-            this.props.history.replaceState(null, `/activations/${id}`, {
+            this.props.history.replaceState(null, `/articles/${id}`, {
                 ...this.props.location.query
             });
         }
@@ -30,14 +30,14 @@ class ShareResultPageContainer extends Component {
     }
 }
 
-function mapStateToProps({ currentActivation: {activation, authorActivations, isLoading} }) {
+function mapStateToProps({ currentArticle: {article, authorArticles, isLoading} }) {
     return {
-        activation,
-        authorActivations,
+        article,
+        authorArticles,
         isLoading
     };
 }
 
-export default connect( mapStateToProps )(
-    connectDataFetchers(ShareResultPageContainer, [ loadActivation ])
+export default connect(mapStateToProps)(
+    connectDataFetchers(ShareResultPageContainer, [loadArticle])
 );

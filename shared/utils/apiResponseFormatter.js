@@ -3,25 +3,25 @@ import { backgroundImagesPrefix } from '../config';
 const NUMBER_OF_BACKGROUNDS = 12;
 
 export default {
-    formatActivation(activation, author) {
+    formatArticle(article, author) {
         return {
-            id                   : activation.id,
-            name                 : activation.name,
-            linkToPass           : activation.linkToPass,
-            publicLink           : activation.publicLink,
-            actionId             : activation.links ? activation.links.action.id : '',
-            numberOfQuestions    : activation.numberOfQuestions,
-            numberOfUsersPassed  : activation.numberOfPeople,
-            dueTime              : activation.dueTime,
-            message              : activation.message,
-            isSponsored          : activation.isSponsored,
-            isPrivate            : activation.isPublic === false,
-            isPassed             : activation.assigneeQuizSession && activation.assigneeQuizSession.finishedAt,
-            userQuizSession      : this.formatUserQuizSession(activation.assigneeQuizSession),
-            pictureURL           : activation.pictureURL,
-            backgroundURL        : activation.backgroundURL || this._getBackgpoundURLById(activation.id),
-            tags                 : activation.tags,
-            timeToPass           : activation.timeToPass,
+            id                   : article.id,
+            name                 : article.name,
+            linkToPass           : article.linkToPass,
+            publicLink           : article.publicLink,
+            actionId             : article.links ? article.links.action.id : '',
+            numberOfQuestions    : article.numberOfQuestions,
+            numberOfUsersPassed  : article.numberOfPeople,
+            dueTime              : article.dueTime,
+            message              : article.message,
+            isSponsored          : article.isSponsored,
+            isPrivate            : article.isPublic === false,
+            isPassed             : article.assigneeQuizSession && article.assigneeQuizSession.finishedAt,
+            userQuizSession      : this.formatUserQuizSession(article.assigneeQuizSession),
+            pictureURL           : article.pictureURL,
+            backgroundURL        : article.backgroundURL || this._getBackgpoundURLById(article.id),
+            tags                 : article.tags,
+            timeToPass           : article.timeToPass,
             author               : author ? this.formatUserInfo(author) : {}
         };
     },

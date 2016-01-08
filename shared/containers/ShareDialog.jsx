@@ -33,7 +33,7 @@ export default class ShareDialogContainer extends Component {
 
         this.openLinkInPopup(linksHash[type]);
 
-        sendEvent('activation', 'share', type);
+        sendEvent('article', 'share', type);
     };
 
     openLinkInPopup = (URL) => {
