@@ -1,0 +1,11 @@
+/* RENAME PLEASE this file to no-share.json
+BUT NEVER EVER SHARE IT ON GITHUB
+ */
+{
+  "googleClientID": "Fill with your credentials",
+  "googleClientSecret": "Fill with your credentials",
+
+  "facebookClientID": "Fill with your credentials",
+  "facebookClientSecret": "Fill with your credentials"
+
+}
