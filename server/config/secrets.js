@@ -4,7 +4,7 @@ export default function () {
     // Find the appropriate database to connect to, default to localhost if not found.
     return {
         db: 'mongodb://localhost/redux',
-        sessionSecret: 'kasper-ohuevshiy-porosenok',
+        sessionSecret: 'random-session-string',
         google: {
             clientID: config.googleClientID,
             clientSecret: config.googleClientSecret,

@@ -12,7 +12,7 @@ var httpProxy = require('http-proxy');
 var proxy = httpProxy.createProxyServer();
 
 export default function (app, passport) {
-  app.set('port', (process.env.PORT || 3000));
+  //app.set('port', (process.env.PORT || 3000));
 
   // X-Powered-By header has no functional value.
   // Keeping it makes it easier for an attacker to build the site's profile
@@ -25,7 +25,6 @@ export default function (app, passport) {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({extended: true})); // for parsing application/x-www-form-urlencoded
   app.use(methodOverride());
-  app.use(express.static(path.join(__dirname, '../..', 'public')));
 
   // I am adding this here so that the Heroku deploy will work
   // Indicates the app is behind a front-facing proxy,

@@ -1,17 +1,16 @@
 var mongoose = require('mongoose');
-var facebookStrategy = require('passport-facebook-oauth2').Strategy;
+var facebookStrategy = require('passport-facebook').Strategy;
 var User = require('../../models/user');
 var secrets = require('../secrets');
-
 
 export default new facebookStrategy({
     clientID: secrets.facebook.clientID,
     clientSecret: secrets.facebook.clientSecret,
     callbackURL: secrets.facebook.callbackURL,
-    enableProof: false
+    passReqToCallback: true,
+    profileFields: ['id', 'name','picture.type(large)', 'emails', 'username', 'displayName', 'about', 'gender']
 }, function (req, accessToken, refreshToken, profile, done) {
-
-
+    console.log(profile);
 
     if (req.user) {
         User.findOne({facebook: profile.id}, function (err, existingUser) {
@@ -24,7 +23,6 @@ export default new facebookStrategy({
                     user.tokens.push({kind: 'facebook', accessToken: accessToken});
                     user.profile.name = user.profile.name || profile.displayName;
                     user.profile.gender = user.profile.gender || profile._json.gender;
-                    user.profile.picture = user.profile.picture || profile._json.picture;
                     user.save(function (err) {
                         done(err, user, {message: 'facebook account has been linked.'});
                     });
@@ -34,12 +32,12 @@ export default new facebookStrategy({
     } else {
         User.findOne({facebook: profile.id}, function (err, existingUser) {
             if (existingUser) return done(null, existingUser);
-            User.findOne({email: profile._json.emails[0].value}, function (err, existingEmailUser) {
+            User.findOne({email: profile._json.email}, function (err, existingEmailUser) {
                 if (existingEmailUser) {
                     return done(null, false, {message: 'There is already an account using this email address. Sign in to that account and link it with facebook manually from Account Settings.'});
                 } else {
                     var user = new User();
-                    user.email = profile._json.emails[0].value;
+                    user.email = profile._json.email;
                     user.facebook = profile.id;
                     user.tokens.push({kind: 'facebook', accessToken: accessToken});
                     user.profile.name = profile._json.displayName;
