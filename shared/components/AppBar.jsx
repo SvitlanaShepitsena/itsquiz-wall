@@ -134,7 +134,8 @@ class AppBar extends Component {
                     displayRightMenu
                         ? <div className='AppBar__right'>
                         <LanguageSwitch className='AppBar__lang'/>
-                        <div className='AppBar__menu-item' >
+
+                        <div className='AppBar__menu-item'>
                             {user && <User user={user}/>}
                             {!user && <div onClick={this.handleLogin}>{l('Sign up / Sign in')}</div>}
                         </div>

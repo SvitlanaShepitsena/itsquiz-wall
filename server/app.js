@@ -55,18 +55,15 @@ const app = express();
 app.use('/static', express.static('public/static'));
 app.use(cookieParser());
 
-
 configPassport(app, passport);
 configExpress(app, passport);
 configRoutes(app, passport);
 
-
 app.use((req, res) => {
     // Process old links like /en/activations
     if (req.url === '/') {
-        return res.redirect(302,"/tutorials");
+        return res.redirect(302, "/tutorials");
     }
-
 
     if (req.url.match(/\/[a-z]{2}\//i)) {
         const noLangUrl = req.url.replace(/^\/[a-z]{2}/i, '');
@@ -83,7 +80,7 @@ app.use((req, res) => {
     if (req.user) {
         console.log(req.user);
     }
-    const store = configureStore({user:req.user});
+    const store = configureStore({user: req.user});
 
     const i18nTools = i18nToolsRegistry[locale];
     // Method of React-router that provides renderProp with property components consisting of all components for the particular view
@@ -162,7 +159,8 @@ function renderHTML({componentHTML, initialState, metaData, config}) {
 
             <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-            <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.cyan-pink.min.css" />
+            <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.blue_grey-pink.min.css" />
+
             <link rel="stylesheet" href="//cdn.materialdesignicons.com/1.2.65/css/materialdesignicons.min.css">
             <link rel="stylesheet" href="${config.staticUrl}/static/build/main.css">
             <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>

@@ -6,19 +6,20 @@ import Icon      from './Icon.jsx';
 
 import { facebookAppId } from '../config';
 
-if ( process.env.BROWSER ) {
+/*get styles only when you are on client*/
+if (process.env.BROWSER) {
     require('./ShareDialog.less');
 }
 
 export default class ShareDialog extends Component {
 
-    static contextTypes = { i18n: PropTypes.object };
+    static contextTypes = {i18n: PropTypes.object};
 
     static propTypes = {
-        title          : PropTypes.string.isRequired,
-        isOpen         : PropTypes.bool.isRequired,
-        onShare        : PropTypes.func.isRequired,
-        onRequestClose : PropTypes.func.isRequired
+        title: PropTypes.string.isRequired,
+        isOpen: PropTypes.bool.isRequired,
+        onShare: PropTypes.func.isRequired,
+        onRequestClose: PropTypes.func.isRequired
     };
 
     render() {
@@ -28,8 +29,8 @@ export default class ShareDialog extends Component {
         return (
             <div className='ShareDialog'>
                 <Dialog
-                    className = 'ShareDialog__dialog'
-                    title     = {title}
+                    className='ShareDialog__dialog'
+                    title={title}
                     {...this.props}>
                     <div className='ShareDialog__buttons-container'>
                         <div
