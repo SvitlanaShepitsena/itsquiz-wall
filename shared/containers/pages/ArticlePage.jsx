@@ -10,6 +10,9 @@ import EmbedEvents         from '../../utils/EmbedEventsUtil';
 import config              from '../../config';
 import { sendEvent }       from '../../utils/googleAnalytics';
 
+import { bindActionCreators } from 'redux';
+import * as articleActions from '../../actions/article-need';
+
 import ArticlePage from '../../components/pages/ArticlePage.jsx';
 
 const embedEvents = new EmbedEvents({
@@ -23,6 +26,10 @@ class ArticlePageContainer extends Component {
         sharingLink: '',
         isLoggingIn: false
     };
+    componentDidMount() {
+        this.props.articlesGet();
+    }
+
 
     componentWillMount() {
         const { id, userId } = this.props.params;
@@ -162,15 +169,17 @@ class ArticlePageContainer extends Component {
         );
     }
 }
+function mapStateToProps(state) {
+    return state.articles;
 
-function mapStateToProps({ currentArticle: {article, authorArticles, isLoading} }) {
-    return {
-        article,
-        authorArticles,
-        isLoading
-    };
 }
 
-export default connect(mapStateToProps)(
-    connectDataFetchers(ArticlePageContainer, [loadArticle])
-);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(articleActions, dispatch);
+}
+ArticlePageContainer.need=[
+    articleActions.articlesGet
+]
+export default connect(mapStateToProps, mapDispatchToProps)(ArticlePageContainer);
+
+

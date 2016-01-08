@@ -11,6 +11,8 @@ export const REMOVE_ARTICLE = 'REMOVE_ARTICLE';
 
 /*Action Creator functions*/
 export function articlesGet() {
+
+    console.error('I was dispatched');
     return {
         type: ARTICLES_GET,
         promise: request.get('https://chicagowepapp.firebaseio.com/articles.json'),

@@ -17,8 +17,9 @@ export function fetchComponentsData(dispatch, components, params, query) {
         }
 
         if (component.need) {
-            return component.need.map(need=>dispatch(need))
-
+            return component.need.map(need=>{
+                return dispatch(need);
+            })
         }
 
 

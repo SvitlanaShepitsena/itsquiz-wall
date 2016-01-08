@@ -1,6 +1,5 @@
 export default function promiseMiddleware() {
     return next => action => {
-        console.log(action);
 
         const { promise, type, ...rest } = action;
 
@@ -28,8 +27,8 @@ var objtoArray = (req)=> {
     if (!req.data || typeof req.data !== 'object') {
         return req;
     }
-    req.data = Object.keys(data).map(key=> {
-        let article = data[key];
+    req.data = Object.keys(req.data).map(key=> {
+        let article = req.data[key];
         article.key = key;
         return article;
     });
