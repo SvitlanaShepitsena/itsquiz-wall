@@ -24,7 +24,7 @@ export default class ActivationsPage extends React.Component {
         onItemClick: React.PropTypes.func,
         onShare: React.PropTypes.func,
         onSearch: React.PropTypes.func
-    };
+    };s
 
     renderContent = () => {
         const { l } = this.context.i18n;

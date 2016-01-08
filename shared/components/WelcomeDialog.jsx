@@ -71,8 +71,8 @@ export default class WelcomeDialog extends Component {
 
                 <div className='WelcomeDialog__slide-content'>
                     <h1> {l('Welcome Slider')} </h1>
-                    <p> {l('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac sapien id mauris.')} </p>
-                    <Button className='WelcomeDialog__btn btn-accent' raised ripple onClick={this.handleNextSlide}>
+                    <p > {l('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac sapien id mauris.')} </p>
+                    <Button className='WelcomeDialog__btn' primary raised ripple onClick={this.handleNextSlide}>
                         {l('Learn more')}
                     </Button>
                 </div>

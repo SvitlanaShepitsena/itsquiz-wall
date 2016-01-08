@@ -14,12 +14,12 @@ export default class MainLayoutContainer extends Component {
         const { skipWelcomeDialog } = this.props.location.query;
 
         if (!skipWelcomeScreen && !skipWelcomeDialog) {
-            this.setState({ isWelcomeScreenShown: true });
+            this.setState({isWelcomeScreenShown: true});
         }
     }
 
     handleWelcomeScreenDismiss = (needToSkip) => {
-        this.setState({ isWelcomeScreenShown: false });
+        this.setState({isWelcomeScreenShown: false});
 
         if (needToSkip) {
             localStorage.setItem('skipWelcomeScreen', 'true');

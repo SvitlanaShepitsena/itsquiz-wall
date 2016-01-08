@@ -1,13 +1,11 @@
 'use strict';
+import React, { Component, PropTypes } from 'react';
+import cx from 'classnames';
+import ReactModal from 'react-modal';
 
 if (process.env.BROWSER) {
     require('./Dialog.less');
 }
-
-import React, { Component, PropTypes } from 'react';
-import cx from 'classnames';
-
-import ReactModal from 'react-modal';
 
 export default class Dialog extends Component {
     static propTypes = {
