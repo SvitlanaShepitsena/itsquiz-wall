@@ -3,17 +3,12 @@ import config from '../../etc/no-share.json';
 export default function () {
     // Find the appropriate database to connect to, default to localhost if not found.
     return {
-        db: 'mongodb://localhost/redux',
-        sessionSecret: 'random-session-string',
+        db: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://localhost/redux',
+        sessionSecret: process.env.SESSION_SECRET || 'kasper-oh..vshiy-porosenok',
         google: {
-            clientID: config.googleClientID,
-            clientSecret: config.googleClientSecret,
-            callbackURL: "/auth/google/callback"
-        },
-        facebook: {
-            clientID: config.facebookClientID,
-            clientSecret: config.facebookClientSecret,
-            callbackURL: "/auth/facebook/callback"
+            clientID: process.env.GOOGLE_CLIENTID || config.googleClientID,
+            clientSecret: process.env.GOOGLE_SECRET || config.googleClientSecret,
+            callbackURL: process.env.GOOGLE_CALLBACK || "/auth/google/callback"
         }
     }
 }();

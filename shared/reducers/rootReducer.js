@@ -3,21 +3,20 @@
 import { combineReducers } from 'redux';
 import apiResponseFormatter from '../utils/apiResponseFormatter';
 import user from './user';
-import article from './article';
 
 import {
-    LOAD_ACTIVATIONS_SUCCESS,
-    LOAD_ACTIVATION_REQUEST,
-    LOAD_ACTIVATION_SUCCESS,
-    LOAD_ACTIVATION_FAIL,
-    CHANGE_ACTIVATIONS_CATEGORY
-} from '../actions/activations';
+    LOAD_ARTICLES_SUCCESS,
+    LOAD_ARTICLE_REQUEST,
+    LOAD_ARTICLE_SUCCESS,
+    LOAD_ARTICLE_FAIL,
+    CHANGE_ARTICLES_CATEGORY
+} from '../actions/articles';
 
-function activations(state = {activations: [], isLoading: true}, action) {
+function articles(state = {articles: [], isLoading: true}, action) {
     switch (action.type) {
-        case LOAD_ACTIVATIONS_SUCCESS:
+        case LOAD_ARTICLES_SUCCESS:
             return {
-                activations: action.activations,
+                articles: action.articles,
                 isLoading: false
             };
         default:
@@ -26,9 +25,8 @@ function activations(state = {activations: [], isLoading: true}, action) {
 }
 
 const rootReducer = combineReducers({
-    activations,
-    user,
-    article
+    article,
+    user
 });
 
 export default rootReducer;

@@ -60,7 +60,7 @@ configExpress(app, passport);
 configRoutes(app, passport);
 
 app.use((req, res) => {
-    // Process old links like /en/activations
+    // Process old links like /en/articles
     if (req.url === '/') {
         return res.redirect(302, "/tutorials");
     }
