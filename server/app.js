@@ -77,9 +77,6 @@ app.use((req, res) => {
     }
 
     const locale = detectLocale(req);
-    if (req.user) {
-        console.log(req.user);
-    }
     const store = configureStore({user: req.user});
 
     const i18nTools = i18nToolsRegistry[locale];

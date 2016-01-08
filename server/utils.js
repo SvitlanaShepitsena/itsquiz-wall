@@ -10,9 +10,19 @@ export function fetchComponentsData(dispatch, components, params, query) {
     // Select components that have assync request for the specific route
     const promises = components.map(current => {
         const component = current.WrappedComponent ? current.WrappedComponent : current;
-        return component.fetchData
-            ? component.fetchData(dispatch, params, query)
-            : null;
+        if (component.fetchData) {
+            return component.fetchData
+                ? component.fetchData(dispatch, params, query)
+                : null;
+        }
+
+        if (component.need) {
+            return component.need.map(need=>dispatch(need))
+
+        }
+
+
+
     });
     return Promise.all(promises);
 }

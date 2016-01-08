@@ -1,10 +1,14 @@
 import React, {Component, PropTypes} from 'react';
 
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as articleActions from '../../actions/article';
+
 import MainLayout from '../../components/layouts/MainLayout.jsx';
 
 import {footerLinks} from '../../config';
 
-export default class MainLayoutContainer extends Component {
+class MainLayoutContainer extends Component {
     state = {
         isWelcomeScreenShown: false
     };
@@ -40,3 +44,19 @@ export default class MainLayoutContainer extends Component {
         );
     }
 }
+
+
+
+function mapStateToProps(state) {
+    return state.article;
+
+}
+/* Binds actions to the store dispatch methods,
+ so dumb component can react on user actions and dispatch them */
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(articleActions, dispatch);
+}
+MainLayoutContainer.need=[
+    articleActions.articlesGet
+]
+export default connect(mapStateToProps, mapDispatchToProps)(MainLayoutContainer );
