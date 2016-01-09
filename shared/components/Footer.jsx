@@ -85,7 +85,7 @@ export default class Footer extends Component {
                         </div>
 
                         <div className="Footer__menu">
-                            <h3 className="Footer__menu-header">{l('Do you like our company?')}</h3>
+                            <h3 className="Footer__menu-header">{l('Do you like "Company Name?"')}</h3>
                             <ul className="Footer__menu-items">
                                 <li>
                                     <a

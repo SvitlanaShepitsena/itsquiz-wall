@@ -3,14 +3,18 @@ import strformat                       from 'strformat';
 import escapeHTML                      from 'lodash/string/escape';
 
 import LoginDialog from '../components/LoginDialog.jsx';
+
 import { socialAuthURL, emailAuthURL } from '../config';
+
 import { sendEvent } from '../utils/googleAnalytics';
 
 export default class LoginDialogContainer extends Component {
+
     static propTypes = {
         isOpen: PropTypes.bool.isRequired,
         onRequestClose: PropTypes.func
     };
+
     static contextTypes = {i18n: PropTypes.object};
 
     handleSocialLogin = (type) => {
@@ -21,17 +25,22 @@ export default class LoginDialogContainer extends Component {
             continueRoute: escapeHTML(`/companywall${window.location.pathname + window.location.search}`),
             socialType: type
         });
+
         this.openLink(redirectURL);
+
         sendEvent('user', 'login', type);
     };
 
     handleEmailLogin = (type) => {
         const { getLocale } = this.context.i18n;
+
         const redirectURL = strformat(emailAuthURL, {
             lang: getLocale().toLowerCase(),
             continueRoute: escapeHTML(`/companywall${window.location.pathname}`)
         });
+
         this.openLink(redirectURL);
+
         sendEvent('user', 'login', type);
     };
 

@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+
 import ShareDialog from '../components/ShareDialog.jsx';
+
 import { facebookAppId } from '../config';
 
 import { sendEvent } from '../utils/googleAnalytics';
@@ -7,14 +9,14 @@ import { sendEvent } from '../utils/googleAnalytics';
 export default class ShareDialogContainer extends Component {
 
     static propTypes = {
-        isOpen: PropTypes.bool.isRequired,
-        twitterMessage: PropTypes.string,
-        linkToShare: PropTypes.string.isRequired,
-        onRequestClose: PropTypes.func
+        isOpen         : PropTypes.bool.isRequired,
+        twitterMessage : PropTypes.string,
+        linkToShare    : PropTypes.string.isRequired,
+        onRequestClose : PropTypes.func
     };
 
     static defaultProps = {
-        twitterMessage: ''
+        twitterMessage : ''
     };
 
     handleShare = (type) => {
@@ -23,12 +25,14 @@ export default class ShareDialogContainer extends Component {
         const linksHash = {
             'google': `https://plus.google.com/share?url=${linkToShare}`,
             'facebook': `https://www.facebook.com/dialog/share?app_id=${facebookAppId}&display=popup`
-            + `&href=${linkToShare}&redirect_uri=${linkToShare}`,
-            'twitter': `https://twitter.com/intent/tweet?text=${escape(twitterMessage)}&url=${linkToShare}&via=chicagowebappcom`,
+                + `&href=${linkToShare}&redirect_uri=${linkToShare}`,
+            'twitter': `https://twitter.com/intent/tweet?text=${escape(twitterMessage)}&url=${linkToShare}&via=itsquizcom`,
             'linkedin': `https://www.linkedin.com/shareArticle?mini=true&url=${linkToShare}`,
             'vk': `http://vk.com/share.php?url=${linkToShare}`
         };
+
         this.openLinkInPopup(linksHash[type]);
+
         sendEvent('article', 'share', type);
     };
 
@@ -41,10 +45,10 @@ export default class ShareDialogContainer extends Component {
 
         return (
             <ShareDialog
-                title={title}
-                isOpen={isOpen}
-                onShare={this.handleShare}
-                onRequestClose={onRequestClose}
+                title          = {title}
+                isOpen         = {isOpen}
+                onShare        = {this.handleShare}
+                onRequestClose = {onRequestClose}
             />
         );
     }

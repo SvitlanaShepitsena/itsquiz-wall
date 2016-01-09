@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 
+
 import MainLayout from '../../components/layouts/MainLayout.jsx';
 
 import {footerLinks} from '../../config';
@@ -16,6 +17,7 @@ export default class MainLayoutContainer extends Component {
         if (!skipWelcomeScreen && !skipWelcomeDialog) {
             this.setState({isWelcomeScreenShown: true});
         }
+        //this.props.articlesGet();
     }
 
     handleWelcomeScreenDismiss = (needToSkip) => {
@@ -40,3 +42,7 @@ export default class MainLayoutContainer extends Component {
         );
     }
 }
+
+
+
+
