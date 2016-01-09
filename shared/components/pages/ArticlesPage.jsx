@@ -7,7 +7,6 @@ import Spinner        from 'react-mdl/lib/Spinner';
 
 import QuizCard    from '../QuizCard.jsx';
 import AppBar      from '../AppBar.jsx';
-import ShareDialog from '../../containers/ShareDialog.jsx';
 
 if (process.env.BROWSER) {
     require('./ArticlesPage.less');
@@ -20,26 +19,15 @@ export default class ArticlesPage extends React.Component {
 
     static propTypes = {
         articles: React.PropTypes.arrayOf(React.PropTypes.object),
-        search: React.PropTypes.string,
         onItemClick: React.PropTypes.func,
-        onShare: React.PropTypes.func,
-        onSearch: React.PropTypes.func
     };
 
     renderContent = () => {
         const { l } = this.context.i18n;
-        const { articles, search, isLoading, isEmpty, onItemClick, onShare } = this.props;
+        const { articles, isLoading, isEmpty, onItemClick } = this.props;
 
         if (isLoading) {
             return <Spinner className='ArticlesPage__spinner'/>;
-        }
-
-        if (isEmpty && search) {
-            return (
-                <div className='ArticlesPage__empty-state'>
-                    {l('Sorry, we couldn\'t find any tests for ')} <strong> {search} </strong>
-                </div>
-            );
         }
 
         if (isEmpty) {
@@ -68,42 +56,25 @@ export default class ArticlesPage extends React.Component {
 
     render() {
         const {
-            search,
             selectedCategory,
-            isSharing,
-            isEmbedded,
             isLoading,
-            linkToShare,
-            onSearch,
             onTabChange,
-            onStopSharing
             } = this.props;
 
         const { l } = this.context.i18n;
 
         const classes = cx('ArticlesPage', {
-            'ArticlesPage--embedded': isEmbedded,
             'ArticlesPage--loading': isLoading
         });
 
         return (
             <div className={classes}>
-                <ShareDialog
-                    title={l('Share this test')}
-                    isOpen={isSharing}
-                    linkToShare={linkToShare}
-                    onRequestClose={onStopSharing}
-                />
-
                 <div className='ArticlesPage__header'>
                     <AppBar
                         title={l('Chicago Wep App')}
-                        search={search}
                         className='ArticlesPage__app-bar'
                         fixOnScroll={false}
                         scrollOffset={65}
-                        displaySearch={true}
-                        onSearch={onSearch}
                     />
 
                     <div className='ArticlesPage__tab-bar'>
