@@ -33,6 +33,7 @@ export default new GoogleStrategy({
     if (req.user) {
         User.findOne({google: profile.id}, function (err, existingUser) {
             if (existingUser) {
+                console.log(existingUser);
                 return done(null, false, {message: 'There is already a Google account that belongs to you. Sign in with that account or delete it, then link it with your current account.'})
             } else {
                 User.findById(req.user.id, function (err, user) {

@@ -4,13 +4,11 @@ import React, {Component, PropTypes} from 'react';
 import { connect }                   from 'react-redux';
 import strformat                     from 'strformat';
 
-import { loadArticle }  from '../../actions/article';
+import { loadArticle }  from '../../actions/articles';
+import connectDataFetchers from '../../lib/connectDataFetchers.jsx';
 import EmbedEvents         from '../../utils/EmbedEventsUtil';
 import config              from '../../config';
 import { sendEvent }       from '../../utils/googleAnalytics';
-
-import { bindActionCreators } from 'redux';
-import * as articleActions from '../../actions/article-need';
 
 import ArticlePage from '../../components/pages/ArticlePage.jsx';
 
@@ -18,17 +16,13 @@ const embedEvents = new EmbedEvents({
     embedOrigin: config.embedOrigin
 });
 
-export default class ArticlePageContainer extends Component {
+class ArticlePageContainer extends Component {
     static contextTypes = {i18n: PropTypes.object};
 
     state = {
         sharingLink: '',
         isLoggingIn: false
     };
-    componentDidMount() {
-        this.props.articlesGet();
-    }
-
 
     componentWillMount() {
         const { id, userId } = this.props.params;
@@ -169,4 +163,14 @@ export default class ArticlePageContainer extends Component {
     }
 }
 
+function mapStateToProps({ currentArticle: {article, authorArticles, isLoading} }) {
+    return {
+        article,
+        authorArticles,
+        isLoading
+    };
+}
 
+export default connect(mapStateToProps)(
+    connectDataFetchers(ArticlePageContainer, [loadArticle])
+);

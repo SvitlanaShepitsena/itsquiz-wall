@@ -8,16 +8,15 @@ import { getSupportedLocales, sprintf } from '../shared/utils';
 
 export function fetchComponentsData(dispatch, components, params, query) {
     // Select components that have assync request for the specific route
-    const needs = components.reduce((prev, current) => {
-        //
-        return (current.need || [])
-            .concat((current.WrappedComponent ? current.WrappedComponent.need : []) || [])
-            .concat(prev);
-    }, []);
-    const promises = needs.map(need => dispatch(need()));
-    console.log(components);
+    const promises = components.map(current => {
+        const component = current.WrappedComponent ? current.WrappedComponent : current;
+        return component.fetchData
+            ? component.fetchData(dispatch, params, query)
+            : null;
+    });
     return Promise.all(promises);
 }
+
 export function getMetaDataFromState({ route, state, lang = 'en' }) {
     if (route === '/articles/:id') {
         const { name, message, pictureURL } = state.currentArticle.article;

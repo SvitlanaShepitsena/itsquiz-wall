@@ -1,8 +1,8 @@
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import promiseMiddleware from '../api/promiseMiddleware';
+
 export default () => {
-    const universalMiddleware = [thunk, promiseMiddleware];
+    const universalMiddleware = [thunk];
 
     if (process.browser) {
         /* Client Side*/
