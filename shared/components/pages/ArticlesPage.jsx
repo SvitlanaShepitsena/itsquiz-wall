@@ -5,7 +5,7 @@ import { Tab, Tabs }  from 'react-mdl/lib/Tabs';
 import Grid, { Cell } from 'react-mdl/lib/Grid';
 import Spinner        from 'react-mdl/lib/Spinner';
 
-import QuizCard    from '../QuizCard.jsx';
+import ArticleCard    from '../ArticleCard.jsx';
 import AppBar      from '../AppBar.jsx';
 
 if (process.env.BROWSER) {
@@ -47,7 +47,7 @@ export default class ArticlesPage extends React.Component {
                         col={3}
                         tablet={4}
                         phone={12}>
-                        <QuizCard>{article.title}</QuizCard>
+                        <ArticleCard>{article.title}</ArticleCard>
                     </Cell>
                 )}
             </Grid>

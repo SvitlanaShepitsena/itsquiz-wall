@@ -48,7 +48,6 @@ export default class ArticlePage extends React.Component {
                     </div>
                 </Card>
 
-
                 <Grid className='ArticlePage__author-articles-grid'>
                     {
                         authorArticles.map((authorArticle, i) =>

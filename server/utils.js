@@ -35,10 +35,10 @@ export function getMetaDataFromState({ route, state, lang = 'en' }) {
             en: 'I have passed test "{name}" and gained {score}%'
         };
 
-        const { isPassed, name, pictureURL, message, userQuizSession } = state.currentArticle.article;
+        const { isPassed, name, pictureURL, message } = state.currentArticle.article;
 
         return {
-            title: strformat(sharePhrases[lang], {name, score: userQuizSession.score}),
+            title: strformat(sharePhrases[lang], {name}),
             siteName: "Company Name",
             image: pictureURL ? pictureURL.replace('svg', 'png') : '',
             description: message

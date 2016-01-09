@@ -47,7 +47,6 @@ class ArticlePageContainer extends Component {
         sendEvent('article', 'share', 'click');
     };
 
-
     handleLoginClose = () => {
         this.setState({
             isLoggingIn: false
