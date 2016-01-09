@@ -6,19 +6,18 @@ import Icon      from './Icon.jsx';
 
 import { facebookAppId } from '../config';
 
-if ( process.env.BROWSER ) {
+if (process.env.BROWSER) {
     require('./LoginDialog.less');
 }
 
 export default class LoginDialog extends Component {
-
-    static contextTypes = { i18n: PropTypes.object };
+    static contextTypes = {i18n: PropTypes.object};
 
     static propTypes = {
-        isOpen         : PropTypes.bool.isRequired,
-        onSocialLogin  : PropTypes.func.isRequired,
-        onEmailLogin   : PropTypes.func.isRequired,
-        onRequestClose : PropTypes.func.isRequired
+        isOpen: PropTypes.bool.isRequired,
+        onSocialLogin: PropTypes.func.isRequired,
+        onEmailLogin: PropTypes.func.isRequired,
+        onRequestClose: PropTypes.func.isRequired
     };
 
     render() {
@@ -28,13 +27,12 @@ export default class LoginDialog extends Component {
         return (
             <div className='LoginDialog'>
                 <Dialog
-                    className = 'LoginDialog__dialog'
-                    title     = {title}
+                    className='LoginDialog__dialog'
+                    title={title}
                     {...this.props}>
                     <h4 className='LoginDialog__title'>
                         {l('Sign in with your social network account')}
                     </h4>
-
                     <div className='LoginDialog__buttons-container'>
                         <div
                             className='LoginDialog__button LoginDialog__button--facebook'
@@ -47,7 +45,6 @@ export default class LoginDialog extends Component {
                             onClick={onSocialLogin.bind(null, 'google')}>
                             <Icon type='google-plus' className='LoginDialog__icon'/>
                         </div>
-
                     </div>
 
                     <h4 className='LoginDialog__title LoginDialog__title--clickable' onClick={onEmailLogin}>
