@@ -1,26 +1,26 @@
 import {ARTICLES_GET_REQUEST, ARTICLES_GET_SUCCESS, ARTICLES_GET_FAILURE, ADD_ARTICLE, REMOVE_ARTICLE} from '../actions/article';
 
-export default function article(state = {isFetching: false, articles: [], error: null}, action) {
+export default function articles(state = {isFetching: false, articles: [], error: null}, action) {
     switch (action.type) {
         case ARTICLES_GET_REQUEST:
-            /*ES6 Syntax for updating state with Object.assign(). */
-            /* Create a new object, copy all props from old state and set isFetching to true */
             return Object.assign(
                 {},
                 state,
-                {isFetching: true
+                {
+                    isFetching: true
                 }
             );
+            break;
         case ARTICLES_GET_SUCCESS:
-            /* Resolve promise with articles and create a new state with fetching:false, and articles from db*/
             return Object.assign(
                 {},
                 state,
                 {
                     isFetching: false,
                     error: false,
-                    articles: action.articles,
+                    articles: action.articles
                 });
+            break;
         case ARTICLES_GET_FAILURE:
             return Object.assign(
                 {},
@@ -29,10 +29,11 @@ export default function article(state = {isFetching: false, articles: [], error:
                     error: action.error,
                     isFetching: false
                 });
-
+            break;
         case ADD_ARTICLE:
             /* es6 way of creating a new array with destruction*/
             return [action.payload, ...state];
+            break;
 
         case REMOVE_ARTICLE:
             let index = action.payload;

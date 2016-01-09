@@ -9,7 +9,7 @@ import config                                 from '../../config';
 import { sendEvent }                          from '../../utils/googleAnalytics';
 
 import { bindActionCreators } from 'redux';
-import * as articleActions from '../../actions/article-need';
+import * as articleActions from '../../actions/article';
 import ArticlesPage from '../../components/pages/ArticlesPage.jsx';
 
 const embedEvents = new EmbedEvents({
@@ -68,6 +68,7 @@ class ArticlesPageContainer extends Component {
     };
 
     componentDidMount() {
+        this.props.getArticlesIfNeeded();
         embedEvents.subscribe({
             'SEARCH_QUIZ_WALL': this.handleSearch
         });
@@ -118,7 +119,7 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators(articleActions, dispatch);
 }
 ArticlesPageContainer.need=[
-    articleActions.articlesGet
+    articleActions.getArticlesIfNeeded
 ]
 export default connect(mapStateToProps, mapDispatchToProps)(ArticlesPageContainer);
 

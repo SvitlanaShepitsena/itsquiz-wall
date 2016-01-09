@@ -3,11 +3,10 @@
 import React, {Component, PropTypes} from 'react';
 import { connect }                   from 'react-redux';
 
-import { loadArticle }  from '../../actions/article';
 import connectDataFetchers from '../../lib/connectDataFetchers.jsx';
 import { sendEvent }       from '../../utils/googleAnalytics';
 
-class ShareResultPageContainer extends Component {
+export default class ShareResultPageContainer extends Component {
     componentDidMount() {
         const { id, userId } = this.props.params;
         const { article } = this.props;
@@ -30,14 +29,5 @@ class ShareResultPageContainer extends Component {
     }
 }
 
-function mapStateToProps({ currentArticle: {article, authorArticles, isLoading} }) {
-    return {
-        article,
-        authorArticles,
-        isLoading
-    };
-}
 
-export default connect(mapStateToProps)(
-    connectDataFetchers(ShareResultPageContainer, [loadArticle])
-);
+

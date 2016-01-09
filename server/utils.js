@@ -8,15 +8,19 @@ import { getSupportedLocales, sprintf } from '../shared/utils';
 
 export function fetchComponentsData(dispatch, components, params, query) {
     // Select components that have assync request for the specific route
-    const needs = components.reduce((prev, current) => {
-        //
-        return (current.need || [])
-            .concat((current.WrappedComponent ? current.WrappedComponent.need : []) || [])
-            .concat(prev);
-    }, []);
-    const promises = needs.map(need => dispatch(need()));
-    console.log(components);
-    return Promise.all(promises);
+    let needs = [];
+    for (var i = 0; i < components.length; i++) {
+        var component = components[i];
+        component = component.WrappedComponent ? component.WrappedComponent : component;
+        if (component.need) {
+            needs.push(...component.need);
+        }
+    }
+    const promises = needs.map(need => {
+        return dispatch(need());
+    });
+
+    return Promise.all([promises[0]]);
 }
 export function getMetaDataFromState({ route, state, lang = 'en' }) {
     if (route === '/articles/:id') {

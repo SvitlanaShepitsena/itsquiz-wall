@@ -18,7 +18,6 @@ import { fetchComponentsData,
 
 import routes         from '../shared/routes.jsx';
 import configureStore from '../shared/store/configureStore';
-import api            from '../shared/apiSingleton';
 import i18n           from '../shared/i18n';
 
 import clientConfig from '../etc/client-config.json';
@@ -77,7 +76,7 @@ app.use((req, res) => {
     }
 
     const locale = detectLocale(req);
-    const store = configureStore({user: req.user});
+    let store = configureStore({user: req.user});
 
     const i18nTools = i18nToolsRegistry[locale];
     // Method of React-router that provides renderProp with property components consisting of all components for the particular view
@@ -97,6 +96,7 @@ app.use((req, res) => {
                     renderProps.location.query
                 )
                     .then(() => {
+
                         const componentHTML = ReactDOM.renderToString(
                             <Provider store={store}>
                                 <i18n.Provider i18n={i18nTools}>

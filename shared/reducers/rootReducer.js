@@ -5,25 +5,6 @@ import apiResponseFormatter from '../utils/apiResponseFormatter';
 import user from './user';
 import articles from './article';
 
-//import {
-//    LOAD_ARTICLES_SUCCESS,
-//    LOAD_ARTICLE_REQUEST,
-//    LOAD_ARTICLE_SUCCESS,
-//    LOAD_ARTICLE_FAIL,
-//    CHANGE_ARTICLES_CATEGORY
-//} from '../actions/article';
-//
-//function articles(state = {articles: [], isLoading: true}, action) {
-//    switch (action.type) {
-//        case LOAD_ARTICLES_SUCCESS:
-//            return {
-//                articles: action.articles,
-//                isLoading: false
-//            };
-//        default:
-//            return state;
-//    }
-//}
 
 const rootReducer = combineReducers({
     articles,

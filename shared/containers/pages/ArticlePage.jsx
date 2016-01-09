@@ -4,13 +4,11 @@ import React, {Component, PropTypes} from 'react';
 import { connect }                   from 'react-redux';
 import strformat                     from 'strformat';
 
-import { loadArticle }  from '../../actions/article';
 import EmbedEvents         from '../../utils/EmbedEventsUtil';
 import config              from '../../config';
 import { sendEvent }       from '../../utils/googleAnalytics';
 
 import { bindActionCreators } from 'redux';
-import * as articleActions from '../../actions/article-need';
 
 import ArticlePage from '../../components/pages/ArticlePage.jsx';
 
@@ -25,9 +23,6 @@ export default class ArticlePageContainer extends Component {
         sharingLink: '',
         isLoggingIn: false
     };
-    componentDidMount() {
-        this.props.articlesGet();
-    }
 
 
     componentWillMount() {
