@@ -1,5 +1,4 @@
 'use strict';
-
 import api                  from '../apiSingleton';
 
 export const LOAD_ARTICLES_SUCCESS = 'LOAD_ARTICLES_SUCCESS';

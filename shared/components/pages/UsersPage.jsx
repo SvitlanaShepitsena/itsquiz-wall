@@ -9,31 +9,31 @@ export default ({ users = [], onItemClick }) => {
     return (
         <div>
             <Grid>
-                {users.map( user => {
-                    if ( user.type === 'USER' ) {
+                {users.map(user => {
+                    if (user.type === 'USER') {
                         return (
                             <Cell col={4} phone={12} key={user.id}>
                                 <UserCard
-                                    id         = {user.id}
-                                    pictureURL = {user.pictureURL}
-                                    firstName  = {user.firstName}
-                                    lastName   = {user.lastName}
-                                    country    = {user.country}
-                                    city       = {user.city}
-                                    onClick    = {onItemClick.bind(this, user)}
+                                    id={user.id}
+                                    pictureURL={user.pictureURL}
+                                    firstName={user.firstName}
+                                    lastName={user.lastName}
+                                    country={user.country}
+                                    city={user.city}
+                                    onClick={onItemClick.bind(this, user)}
                                 />
                             </Cell>
                         );
-                    } else if ( user.type === 'COMPANY' ) {
+                    } else if (user.type === 'COMPANY') {
                         return (
                             <Cell col={4} phone={12} key={user.id}>
                                 <CompanyCard
-                                    id          = {user.id}
-                                    pictureURL  = {user.pictureURL}
-                                    companyName = {user.companyName}
-                                    country     = {user.country}
-                                    city        = {user.city}
-                                    onClick     = {onItemClick.bind(this, user)}
+                                    id={user.id}
+                                    pictureURL={user.pictureURL}
+                                    companyName={user.companyName}
+                                    country={user.country}
+                                    city={user.city}
+                                    onClick={onItemClick.bind(this, user)}
                                 />
                             </Cell>
                         );

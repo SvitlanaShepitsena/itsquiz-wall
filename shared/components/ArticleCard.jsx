@@ -25,10 +25,10 @@ export default class ArticleCard extends Component {
 
         return (
             <Card className="ArticleCard" shadow={1}>
-                <CardTitle className='QuizCard__head'>
+                <CardTitle className='ArticleCard__head'>
                     {name}
                 </CardTitle>
-                <div className='QuizCard__content'>
+                <div className='ArticleCard__content'>
                     {this.props.children}
                 </div>
             </Card>

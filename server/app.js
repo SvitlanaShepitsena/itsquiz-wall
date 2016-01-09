@@ -139,7 +139,7 @@ function renderHTML({componentHTML, initialState, metaData, config}) {
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="shortcut icon" href="/static/favicon.ico"/>
-            <title>Quiz Wall</title>
+            <title>React with Redux Isomorphic App Boilerplate</title>
 
             <meta name="description" content="${escapeHTML(metaData.description)}">
             <meta property="og:title" content="${escapeHTML(metaData.title)}" />
@@ -151,7 +151,7 @@ function renderHTML({componentHTML, initialState, metaData, config}) {
             <meta property="og:locale:alternate" content="ru_RU" />
             <meta property="og:locale:alternate" content="uk_UA" />
             <meta name="twitter:card" content="summary" />
-            <meta name="twitter:site" content="@itsquizcom" />
+            <meta name="twitter:site" content="@chicagowebappcom" />
             <meta name="twitter:title" content="${escapeHTML(metaData.title)}" />
             <meta name="twitter:description" content="${escapeHTML(metaData.description)}" />
             <meta name="twitter:image" content="${escapeHTML(metaData.image)}" />

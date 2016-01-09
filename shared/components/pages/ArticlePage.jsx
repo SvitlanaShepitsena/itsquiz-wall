@@ -30,7 +30,7 @@ export default class ArticlePage extends React.Component {
             } = this.props;
 
         const {
-            pictureURL,
+            title,
             author,
             } = article;
 
