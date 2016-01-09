@@ -12,7 +12,9 @@ export default function promiseMiddleware() {
         return promise
             .then(req => {
                 req = objtoArray(req);
-                next({...rest,req, type: SUCCESS});
+                var articles = {isFetching: false, articles: req.data, error: null};
+                console.log(articles);
+                next({...rest,articles, type: SUCCESS});
                 return true;
             })
             .catch(error => {

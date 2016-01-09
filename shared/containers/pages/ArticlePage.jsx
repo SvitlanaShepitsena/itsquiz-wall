@@ -5,7 +5,6 @@ import { connect }                   from 'react-redux';
 import strformat                     from 'strformat';
 
 import { loadArticle }  from '../../actions/article';
-import connectDataFetchers from '../../lib/connectDataFetchers.jsx';
 import EmbedEvents         from '../../utils/EmbedEventsUtil';
 import config              from '../../config';
 import { sendEvent }       from '../../utils/googleAnalytics';
@@ -19,7 +18,7 @@ const embedEvents = new EmbedEvents({
     embedOrigin: config.embedOrigin
 });
 
-class ArticlePageContainer extends Component {
+export default class ArticlePageContainer extends Component {
     static contextTypes = {i18n: PropTypes.object};
 
     state = {
@@ -169,17 +168,5 @@ class ArticlePageContainer extends Component {
         );
     }
 }
-function mapStateToProps(state) {
-    return state.articles;
-
-}
-
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators(articleActions, dispatch);
-}
-ArticlePageContainer.need=[
-    articleActions.articlesGet
-]
-export default connect(mapStateToProps, mapDispatchToProps)(ArticlePageContainer);
 
 

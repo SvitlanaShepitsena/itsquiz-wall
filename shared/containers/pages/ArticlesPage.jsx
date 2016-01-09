@@ -4,12 +4,12 @@ import React, {Component, PropTypes} from 'react';
 import { connect }                   from 'react-redux';
 import strformat                     from 'strformat';
 
-import { loadArticles, searchArticles } from '../../actions/article';
-import connectDataFetchers                    from '../../lib/connectDataFetchers.jsx';
 import EmbedEvents                            from '../../utils/EmbedEventsUtil';
 import config                                 from '../../config';
 import { sendEvent }                          from '../../utils/googleAnalytics';
 
+import { bindActionCreators } from 'redux';
+import * as articleActions from '../../actions/article-need';
 import ArticlesPage from '../../components/pages/ArticlesPage.jsx';
 
 const embedEvents = new EmbedEvents({
@@ -109,15 +109,19 @@ class ArticlesPageContainer extends Component {
         );
     }
 }
+function mapStateToProps(state) {
+    return state.articles;
 
-function mapStateToProps({ articles: {articles, isLoading} }) {
-    return {
-        articles,
-        isLoading
-    };
 }
 
-export default connect(mapStateToProps)(
-    connectDataFetchers(ArticlesPageContainer, [loadArticles])
-);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(articleActions, dispatch);
+}
+ArticlesPageContainer.need=[
+    articleActions.articlesGet
+]
+export default connect(mapStateToProps, mapDispatchToProps)(ArticlesPageContainer);
+
+
+
 
