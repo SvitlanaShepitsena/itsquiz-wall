@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-30 17:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: FULL NAME\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -24,11 +24,6 @@ msgstr ""
 msgid "FREE"
 msgstr ""
 
-msgid " question"
-msgid_plural " questions"
-msgstr[0] ""
-msgstr[1] ""
-
 msgid " minute"
 msgid_plural " minutes"
 msgstr[0] ""
@@ -36,12 +31,6 @@ msgstr[1] ""
 
 msgid "Search"
 msgstr ""
-
-
-msgid "%d minute"
-msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
 
 msgid "There are no articles in this category yet"
 msgstr ""
@@ -55,7 +44,7 @@ msgstr ""
 msgid "Sign up / Sign in"
 msgstr ""
 
-msgid "Welcome to It's quiz!"
+msgid "Welcome!"
 msgstr ""
 
 msgid "Learn more"
@@ -94,12 +83,14 @@ msgstr ""
 msgid "Need help?"
 msgstr ""
 
+msgid "Do you like our company?"
+msgstr ""
+
 msgid "Read more"
 msgstr ""
 
 msgid "Meet our team"
 msgstr ""
-
 
 msgid "Sign in with your social network account"
 msgstr ""
@@ -109,3 +100,4 @@ msgstr ""
 
 msgid "Share"
 msgstr ""
+

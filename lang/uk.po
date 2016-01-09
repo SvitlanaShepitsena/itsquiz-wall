@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-30 17:12+0200\n"
 "PO-Revision-Date: 2015-12-30 17:15+0200\n"
-"Last-Translator: Oleg <CBETJIOMYP@gmail.com>\n"
+"Last-Translator: Oleg\n"
 "Language-Team: русский <>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -20,440 +20,77 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Gtranslator 2.91.6\n"
 
-#: /Users/koorchik/work/itsquiz/itsquiz-wall/bin/../src_es5/components/QuizCard.js:106
-#: /Users/katerynaporshnieva/Documents/work/itsquiz/itsquiz-wall/bin/../src_es5/components/QuizCard.js:114
-#: /Users/katerynaporshnieva/Documents/work/itsquiz/itsquiz-wall/bin/../src_es5/components/QuizCard.js:113
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/QuizCard.js:112
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/QuizCard.js:114
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/QuizCard.js:149
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/QuizCard.js:165
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/QuizCard.js:179
 msgid "View details"
 msgstr "Докладніше"
 
-#: /Users/katerynaporshnieva/Documents/work/itsquiz/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:118
-#: /Users/katerynaporshnieva/Documents/work/itsquiz/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:145
 msgid "FREE"
 msgstr "Безкоштовно"
 
-#: /Users/katerynaporshnieva/Documents/work/itsquiz/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:123
-msgid " question"
-msgid_plural " questions"
-msgstr[0] "питання"
-msgstr[1] "питання"
-msgstr[2] "питань"
-
-#: /Users/katerynaporshnieva/Documents/work/itsquiz/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:125
-msgid " minute"
-msgid_plural " minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-
-#: /Users/katerynaporshnieva/Documents/work/itsquiz/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:133
-#: /Users/katerynaporshnieva/Documents/work/itsquiz/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:154
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:143
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:174
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:184
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:156
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:182
-msgid "Pass this test"
-msgstr "Скласти цей тест"
-
-#: /Users/katerynaporshnieva/Documents/work/itsquiz/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:123
-#: /Users/katerynaporshnieva/Documents/work/itsquiz/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:126
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:119
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:150
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:160
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:132
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/QuizCard.js:108
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:137
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/QuizCard.js:121
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:152
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/QuizCard.js:135
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:153
-#, javascript-format
-msgid "%d question"
-msgid_plural "%d questions"
-msgstr[0] "%d питання"
-msgstr[1] "%d питання"
-msgstr[2] "%d питань"
-
-#: /Users/katerynaporshnieva/Documents/work/itsquiz/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:172
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:161
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:201
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:211
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:183
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:209
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:263
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:264
-#, javascript-format
-msgid "More tests by %s"
-msgstr "Більше тестів %s"
-
-#: /Users/katerynaporshnieva/Documents/work/itsquiz/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:62
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:77
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:161
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:162
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:163
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:165
-msgid "Quizzes"
-msgstr "Тести"
-
-#: /Users/katerynaporshnieva/Documents/work/itsquiz/itsquiz-wall/bin/../src_es5/components/SearchBox.js:99
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/SearchBox.js:99
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/SearchBox.js:116
 msgid "Search"
 msgstr "Пошук"
 
-#: /Users/katerynaporshnieva/Documents/work/itsquiz/itsquiz-wall/bin/../src_es5/i18n/Tools.js:49
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/i18n/Tools.js:49
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/i18n/Tools.js:53
-#, javascript-format
-msgid "%d hour"
-msgid_plural "%d hours"
-msgstr[0] "%d година"
-msgstr[1] "%d години"
-msgstr[2] "%d годин"
-
-#: /Users/katerynaporshnieva/Documents/work/itsquiz/itsquiz-wall/bin/../src_es5/i18n/Tools.js:52
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/i18n/Tools.js:52
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/i18n/Tools.js:56
-#, javascript-format
-msgid "%d minute"
-msgid_plural "%d minutes"
-msgstr[0] "%d хвилина"
-msgstr[1] "%d хвилини"
-msgstr[2] "%d хвилин"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:99
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:184
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:186
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:187
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:188
-msgid "All tests"
-msgstr "Всі тести"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:104
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:189
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:191
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:192
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:193
-msgid "Vacancies"
-msgstr "Вакансії"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:109
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:194
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:196
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:197
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:198
-msgid "Education"
-msgstr "Освіта"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:114
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:199
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:201
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:202
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:203
-msgid "Entertainment"
-msgstr "Розваги"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:81
-msgid "Sorry, we couldn't find any tests for "
-msgstr "На жаль, по вашому запиту тестів не знайдено"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:97
-msgid "There are no articles in this category yet"
-msgstr "У цій категорії тестів поки що немає"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/ShareDialog.js:88
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/ShareDialog.js:63
-msgid "Share test"
-msgstr "Поділитися тестом"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:146
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:118
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:123
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:138
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:139
 msgid "private"
 msgstr "приватний"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/AppBar.js:131
 msgid "Sign in"
 msgstr "Увійти"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/AppBar.js:132
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/AppBar.js:155
 msgid "Sign up / Sign in"
 msgstr "Реєстрація / Вхід"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:100
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:120
-msgid "Welcome to It's quiz!"
-msgstr "Ласкаво просимо до It's quiz!"
+msgid "Welcome!"
+msgstr "Ласкаво просимо!"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:107
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:127
-msgid ""
-"Cloud platform for knowledge monitoring, creating quizzes, tests and "
-"questionnaires, search and identification of talented people"
-msgstr ""
-"Хмарна платформа для моніторингу знань, створення тестів, опитувань та "
-"анкетування, пошуку та виявлення талановитих людей"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:113
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:133
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:132
 msgid "Learn more"
 msgstr "Дізнатися більше"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:130
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:150
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:149
-msgid "Check your knowledge"
-msgstr "Перевірте свої знання"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:136
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:156
-msgid ""
-"Explore hundreds of open tests on Quiz Wall, check your knowledge, explore "
-"new topics, share your achievements with friends"
-msgstr ""
-"Дослідіть сотні тестів, перевірте свої знання, вивчайте нові теми, діліться "
-"своїми досягненнями з друзями"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:154
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:159
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:179
-msgid "You can create a test"
-msgstr "Ви можете створити тест"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:161
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:166
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:186
-msgid ""
-"Everyone can create a test on It's quiz! Simply add new questions, compose a "
-"quiz and share with your friends!"
-msgstr ""
-"Кожен може створити тест на It's quiz! Просто додайте нові питання, складіть "
-"з них тест і поділіться ним з друзями."
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:167
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:172
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:192
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:191
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:220
-msgid "Create a test"
-msgstr "Створити тест"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:185
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:190
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:210
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:209
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:178
-msgid "Find best ever employees"
-msgstr "Знайдіть кращих співробітників"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:191
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:196
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:216
-msgid ""
-"Filter out candidates who don’t meet your standards before you interview "
-"them. Create test for a position, publish on Quiz Wall, enjoy interviewing "
-"only the best."
-msgstr ""
-"Відсійте кандидатів, які не відповідають вашим вимогам, перш ніж запросити "
-"їх на співбесіду. Створіть тест на вакансію, опублікуйте на стіні, проводьте "
-"співбесіду з найкращими."
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:196
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:201
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:221
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:220
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:189
-msgid "Create a vacancy"
-msgstr "Створити вакансію"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:235
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:240
 msgid "Skip this message"
 msgstr "Пропустити це повідомлення"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:141
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:161
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:160
-msgid "Discover tests"
-msgstr "Дослідити тести"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:261
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:266
 msgid "Do not show me this message again"
 msgstr "Більше не показувати це повідомлення"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:154
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:236
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:263
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlesPage.js:156
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:333
-msgid "Share this test"
-msgstr "Поділитися тестом"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/Footer.js:58
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/Footer.js:209
 msgid "Share this page"
 msgstr "Поділитися сторінкою"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/Footer.js:75
 msgid "Keep in touch"
 msgstr "Залишайтеся на зв'язку"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/Footer.js:89
 msgid "Twitter"
 msgstr "Twitter"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/Footer.js:101
 msgid "Facebook"
 msgstr "Facebook"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/Footer.js:113
 msgid "Videos on Youtube"
 msgstr "Відео на Youtube"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/Footer.js:124
 msgid "Support"
 msgstr "Допомога"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/Footer.js:138
 msgid "Support page"
 msgstr "Підтримка"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/Footer.js:150
 msgid "Suggest an idea"
 msgstr "Запропонувати ідею"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/Footer.js:162
 msgid "Need help?"
 msgstr "Потрібна допомога?"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/Footer.js:173
-msgid "Do you like It's quiz?"
-msgstr "Сподобався It's quiz?"
+msgid "Do you like our company?"
+msgstr "Сподобалося"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/Footer.js:187
 msgid "Read more"
 msgstr "Дізнатися більше"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/Footer.js:199
 msgid "Meet our team"
 msgstr "Наша команда"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:127
-msgid ""
-"Explore hundreds of open tests on Quiz Wall, check your knowledge, explore "
-"new topics, share your achievements with friends!"
-msgstr ""
-"Перевірте свої професійні знання, визначте рівень володіння іноземними "
-"мовами, пройдіть розважальні тести, знайдіть нову роботу!"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:155
-msgid ""
-"Find out your language level, check knowledge of professional topics, pass "
-"entertainment tests or even find a new job! Everything absolutely free!"
-msgstr ""
-"Вивчайте нові теми, розширюйте кругозір, набирайтеся досвіду, діліться "
-"своїми досягненнями в соціальних мережах!"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:178
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:207
-msgid "Create your own tests!"
-msgstr "Створіть свої власні тести!"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:185
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:214
-msgid ""
-"Everyone can create a test on It's quiz! Simply add new questions, compose a "
-"quiz, activate and share with your friends!"
-msgstr ""
-"Кожен може створити тест на It's quiz! Просто додайте нові питання, складіть "
-"з них тест, активуйте і поділіться ним з друзями!"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:215
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/WelcomeDialog.js:184
-msgid ""
-"Filter out candidates who don’t meet your standards before you interview "
-"them. Create test for a position, publish on Quiz Wall, enjoy interviewing "
-"only the best!"
-msgstr ""
-"Створіть тест для вакансії, публікуйте його на стіні. Протестуйте професійні "
-"знання претендента, перш ніж запросити на співбесіду. Проводьте співбесіду з "
-"кращими!"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:159
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:175
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:176
-msgid "Pass the test"
-msgstr "Скласти тест"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:169
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:185
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:186
-msgid "Use this offer"
-msgstr "Скористатися цією пропозицією"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/QuizCard.js:114
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/QuizCard.js:128
-msgid "Special proposition!"
-msgstr "Спеціальна пропозиція!"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/LoginDialog.js:71
 msgid "Sign in with your social network account"
 msgstr "Увійдіть за допомогою аккаунта соціальної мережі"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/LoginDialog.js:115
 msgid "or use your e-mail"
 msgstr "або використовуйте ваш e-mail"
 
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:223
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:224
-#, javascript-format
-msgid "%s of %s point"
-msgid_plural "%s of %s points"
-msgstr[0] "%s з %s бала"
-msgstr[1] "%s з %s балів"
-msgstr[2] "%s з %s балів"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:237
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:238
-msgid "Share result with friends"
-msgstr "Поділитися результатом з друзями"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:245
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:246
-msgid "View my answers"
-msgstr "Переглянути мої відповіді"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:298
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:299
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:300
-msgid "You could do better!"
-msgstr "Ви могли б скласти краще!"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:300
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:301
-msgid "Good job!"
-msgstr "Гарна робота!"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:301
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:302
-msgid "Great result!"
-msgstr "Прекрасний результат!"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:302
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:303
-msgid "You rock! Excellent job!"
-msgstr "Вау! Відмінна робота!"
-
-#: /home/oleg/work/iq/itsquiz-wall/bin/../src_es5/components/pages/ArticlePage.js:335
 msgid "Share"
 msgstr "Поділитися"
